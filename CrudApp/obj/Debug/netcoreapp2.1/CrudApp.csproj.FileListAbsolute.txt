@@ -1,4 +1,3 @@
-D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.csprojAssemblyReference.cache
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.AssemblyInfoInputs.cache
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.AssemblyInfo.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.csproj.CoreCompileInputs.cache
@@ -28,3 +27,14 @@ D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.csproj.CopyComplete
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Index.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Create.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.Resource.SharedResource.az.resources
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.Resource.SharedResource.en.resources
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.csproj.GenerateResource.cache
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\az\CrudApp.resources.dll
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\en\CrudApp.resources.dll
+D:\CrudApp\CrudApp\bin\Debug\netcoreapp2.1\az\CrudApp.resources.dll
+D:\CrudApp\CrudApp\bin\Debug\netcoreapp2.1\en\CrudApp.resources.dll
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Index.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_Layout.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs

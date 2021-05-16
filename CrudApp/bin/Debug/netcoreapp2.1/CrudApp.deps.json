@@ -45,6 +45,14 @@
         "runtime": {
           "CrudApp.dll": {}
         },
+        "resources": {
+          "az/CrudApp.resources.dll": {
+            "locale": "az"
+          },
+          "en/CrudApp.resources.dll": {
+            "locale": "en"
+          }
+        },
         "compile": {
           "CrudApp.dll": {}
         }

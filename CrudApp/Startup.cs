@@ -1,4 +1,5 @@
 ﻿using CrudApp.Db;
+using CrudApp.Resource;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -31,7 +33,21 @@ namespace CrudApp
                 options.UseSqlServer(_configuration["ConnectionStrings:DefaultConnection"]);
             });
 
-            services.AddMvc();
+            services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(opt => {
+
+                opt.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResource));
+            });
+            services.Configure<RequestLocalizationOptions>(op =>
+            {
+                var supportedCultures = new List<CultureInfo>
+                {
+                    new CultureInfo("az"),
+                    new CultureInfo("en")            
+                };
+                op.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("az");
+                op.SupportedCultures = supportedCultures;
+                op.SupportedUICultures = supportedCultures;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +58,8 @@ namespace CrudApp
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
+            app.UseRequestLocalization();
+
             app.UseStatusCodePages();
             app.UseMvcWithDefaultRoute();
             //app.Run(async (context) =>
