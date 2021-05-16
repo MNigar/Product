@@ -1,5 +1,5 @@
 ﻿using CrudApp.Db;
-using CrudApp.Models;
+using CrudApp.Db.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +24,12 @@ namespace CrudApp.Controllers
         {
             IEnumerable<Product> products = _context.Products.ToList();
             return View(products);
+        }
+        [HttpGet]
+        public IActionResult Views()
+        {
+            
+            return View();
         }
         [HttpGet]
         public IActionResult Create()

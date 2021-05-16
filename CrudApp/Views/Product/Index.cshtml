@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CrudApp.Models.Product>
+﻿@model IEnumerable<CrudApp.Db.Models.Product>
 
 @{
     ViewData["Title"] = "Index";
@@ -15,9 +15,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Price)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Image)
             </th>
@@ -30,9 +30,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Price)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Image)
             </td>

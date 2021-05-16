@@ -69,6 +69,10 @@ namespace CrudApp
              app.UseMvc(routes =>
              {
                  routes.MapRoute(
+               name: "areas",
+               template: "{area:exists}/{controller=Category}/{action=Index}/{id?}");
+
+                 routes.MapRoute(
                      name: "default",
                      template: "{controller=Product}/{action=Index}/{id?}");
              });

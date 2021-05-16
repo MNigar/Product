@@ -5,13 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Views\bookworm-html\redesigned-octo-fiesta\html-demo\home\..others\authors-single.html" />
+    <Compile Remove="Areas\Admin\Models\**" />
+    <Content Remove="Areas\Admin\Models\**" />
+    <EmbeddedResource Remove="Areas\Admin\Models\**" />
+    <None Remove="Areas\Admin\Models\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
+    <Content Include="Public\bookworm-html\redesigned-octo-fiesta\html-demo\home\..others\authors-single.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\Image\" />
   </ItemGroup>
 
