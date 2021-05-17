@@ -59,13 +59,22 @@ namespace CrudApp
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), "Templates")),
-                RequestPath = "/StaticFiles"
-            });
-        
+
+            app.UseStaticFiles();
+
+            //app.UseStaticFiles(new StaticFileOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //        Path.Combine(Directory.GetCurrentDirectory(), "Templates")),
+            //    RequestPath = "/StaticFiles"
+            //});
+            //app.UseStaticFiles(new StaticFileOptions
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //         Path.Combine(Directory.GetCurrentDirectory(), "Template")),
+            //    RequestPath = "/StaticFile"
+            //});
+
             app.UseRequestLocalization();
 
             app.UseStatusCodePages();

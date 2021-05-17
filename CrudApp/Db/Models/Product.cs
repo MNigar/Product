@@ -16,7 +16,7 @@ namespace CrudApp.Db.Models
         public string Image { get; set; }
         public int Status { get; set; }
 
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
         public virtual User User { get; set; }
     }
 }

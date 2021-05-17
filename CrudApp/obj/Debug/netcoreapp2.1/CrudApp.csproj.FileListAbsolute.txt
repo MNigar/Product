@@ -103,3 +103,7 @@ D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Views.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\LanguagePar.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout1.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\New.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Edit.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs

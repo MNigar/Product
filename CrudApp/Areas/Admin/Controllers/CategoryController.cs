@@ -21,5 +21,20 @@ namespace CrudApp.Areas.Admin.Controllers
             IEnumerable<Category> categories = _context.Categories.ToList();
             return View(categories);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Category model)
+        {
+            model.Id = Guid.NewGuid();
+            model.Status = (int)Utils.Enums.Status.Active;
+            await _context.Categories.AddAsync(model);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+
+        }
     }
 }
