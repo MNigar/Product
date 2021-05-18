@@ -1,0 +1,114 @@
+﻿@model IEnumerable<CrudApp.Db.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<html>
+<body>
+    <div class="metro_subheader dark-overlay dark-overlay-2" style="        background-image: url(/Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img/subheader.jpg)">
+        <div class="container">
+            <div class="metro_subheader-inner">
+                <h1>Recipes</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Recipes</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Subheader End -->
+    <!-- Blog Posts Start -->
+    <form>
+        <div class="section">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+
+                        <div class="col-md-4">
+                            <label for="endDate">Book</label>
+                            <input type="text" id="endDate" name="Name" class="form-control">
+                        </div>
+
+                        <div class="col-md-4">
+                            <div>Category</div>
+                            <select class="form-control" name="categoryId">
+                                <option value="" selected disabled hidden>Choose here</option>
+                                @foreach (var cat in Model)
+                                {
+
+                                    <option value="@cat.Id">@cat.Name</option>
+                                }
+                            </select>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div>CreatedUser</div>
+
+                            <input type="text" id="endDate" name="user" class="form-control">
+
+                        </div>
+                        <div class="text-left">
+                            <input type="submit" value="Searh" class="mt-4 metro_btn-custom" name="button" formaction="/Recipes/Search/" formmethod="GET">
+                        </div>
+                    </div>
+                    @*  *@
+
+                </div>
+                <br />
+                <div class="row">
+
+                    @foreach (var i in Model)
+                    {
+                       
+                        <!-- Recipe Start -->
+                        <div class="col-lg-4 col-md-6">
+                            <article class="metro_post metro_recipe">
+                                <div class="metro_post-thumb">
+                                    <a href="/Recipes/RecipeDetails/@i.Id">
+
+                                        <img src="~/Image/@i.Image" alt="recipe">
+                                    </a>
+                                </div>
+                                <div class="metro_post-body">
+                                    <div class="metro_post-desc">
+                                        <span class="metro_post-meta"> <a href="#"> <i class="fas fa-book"></i> @i.PageCount </a> <a href="recipe-details.html"> <i class="fas fa-user-edit"></i> @i.Author</a> </span>
+                                        <h5> <a href="/Menu/RecipeDetails">@i.Name</a> </h5>
+                                        @*<p>@item.Description.Substring(0, 3)</p>*@
+                                    </div>
+                                    <a class="btn-link" href="/Recipes/RecipeDetails/@i.Id"> Read More <i class="fas fa-arrow-right"></i> </a>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- Recipe End -->
+                    }
+
+
+
+                </div>
+
+                <!-- Pagination Start -->
+                <ul class="pagination mb-0">
+                    <li class="page-item"><a class="page-link" href="#"> <i class="fas fa-arrow-left"></i> </a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#"> <i class="fas fa-arrow-right"></i> </a></li>
+                </ul>
+                <!-- Pagination End -->
+
+            </div>
+        </div>
+        <!-- Blog Posts End -->
+        <!-- Instagram Start -->
+        @*  *@
+    </form>
+    <!-- Instagram End -->
+</body>
+</html>

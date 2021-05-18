@@ -57,6 +57,8 @@ namespace CrudApp.Controllers
                     FileStream fileStream = new FileStream(path, FileMode.CreateNew);
                     await image.CopyToAsync(fileStream);
                     model.Image = fileName;
+                    model.CreatedDate = DateTime.Now;
+                    
                     await _context.Products.AddAsync(model);
                     await _context.SaveChangesAsync();
 
@@ -76,7 +78,6 @@ namespace CrudApp.Controllers
         public IActionResult Edit(Guid id)
         {
             var model = _context.Products.Where(x => x.Id == id).FirstOrDefault();
-            ViewBag.image = model.Image;
             ViewBag.CategoryId = new SelectList(_context.Categories.ToList(), "Id", "Name");
 
             return View(model);
@@ -93,6 +94,8 @@ namespace CrudApp.Controllers
                 FileStream fileStream = new FileStream(path, FileMode.CreateNew);
                 await image.CopyToAsync(fileStream);
                 model.Image = fileName;
+                model.UpdatedDate = DateTime.Now;
+                model.CreatedDate = currentProduct.CreatedDate;
                 //var currentPhotoPath= Path.Combine(_environment.WebRootPath, "Image", currentProduct.Image);
                 //System.IO.File.Delete(currentPhotoPath);
                 _context.Entry(currentProduct).State = EntityState.Detached;
@@ -113,6 +116,17 @@ namespace CrudApp.Controllers
 
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
+        }
+
+        public IActionResult BookGrid()
+        {
+            IEnumerable<Product> book = _context.Products.ToList();
+            return View(book);
+        }
+        public IActionResult BookDetails(Guid id)
+        {
+            var model = _context.Products.FirstOrDefault(x => x.Id == id);
+            return View(model);
         }
 
     }
