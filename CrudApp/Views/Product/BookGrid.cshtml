@@ -67,20 +67,20 @@
                        
                         <!-- Recipe Start -->
                         <div class="col-lg-4 col-md-6">
-                            <article class="metro_post metro_recipe">
-                                <div class="metro_post-thumb">
-                                    <a href="/Recipes/RecipeDetails/@i.Id">
+                            <article class="metro_post metro_recipe" >
+                                <div class="metro_post-thumb"  alt="recipe">
+                                    <a href="/Product/BookDetails/@i.Id">
 
-                                        <img src="~/Image/@i.Image" alt="recipe">
+                                        <img src="~/Image/@i.Image" style="height: 400px; width:400px; object-fit: cover"  >
                                     </a>
                                 </div>
                                 <div class="metro_post-body">
                                     <div class="metro_post-desc">
-                                        <span class="metro_post-meta"> <a href="#"> <i class="fas fa-book"></i> @i.PageCount </a> <a href="recipe-details.html"> <i class="fas fa-user-edit"></i> @i.Author</a> </span>
-                                        <h5> <a href="/Menu/RecipeDetails">@i.Name</a> </h5>
+                                        <span class="metro_post-meta"> <a href="#"> <i class="fas fa-book"></i> @i.PageCount </a> <a href="/Product/BookDetails/@i.Id"> <i class="fas fa-user-edit"></i> @i.Author</a> </span>
+                                        <h5> <a href="/Product/BookDetails/@i.Id">@i.Name</a> </h5>
                                         @*<p>@item.Description.Substring(0, 3)</p>*@
                                     </div>
-                                    <a class="btn-link" href="/Recipes/RecipeDetails/@i.Id"> Read More <i class="fas fa-arrow-right"></i> </a>
+                                    <a class="btn-link" href="/Product/BookDetails/@i.Id"> Read More <i class="fas fa-arrow-right"></i> </a>
                                 </div>
                             </article>
                         </div>

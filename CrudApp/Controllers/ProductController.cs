@@ -1,5 +1,6 @@
 ﻿using CrudApp.Db;
 using CrudApp.Db.Models;
+using CrudApp.Utils;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,7 @@ namespace CrudApp.Controllers
 {
     public class ProductController : Controller
     {
+
         private readonly IHostingEnvironment _environment;
         private readonly ProductContext _context;
         public ProductController(IHostingEnvironment environment, ProductContext context)
@@ -22,6 +24,7 @@ namespace CrudApp.Controllers
             _environment = environment;
             _context = context;
         }
+        BookDataController method = new BookDataController();
         public IActionResult Index()
         {
             IEnumerable<Product> products = _context.Products.ToList();
@@ -58,10 +61,10 @@ namespace CrudApp.Controllers
                     await image.CopyToAsync(fileStream);
                     model.Image = fileName;
                     model.CreatedDate = DateTime.Now;
-                    
+                    model.Status = (int) Utils.Enums.Status.Waiting;
                     await _context.Products.AddAsync(model);
                     await _context.SaveChangesAsync();
-
+                    Utils.Email.SendEmail("nigarmammadova4t@gmail.com", "Nigar", "Kitab admin terefinden qiymetlendirirlecek", model.Name);
                 }
                     return RedirectToAction("Index");
                 
@@ -77,6 +80,7 @@ namespace CrudApp.Controllers
         [HttpGet]
         public IActionResult Edit(Guid id)
         {
+            var request = HttpContext.Request;
             var model = _context.Products.Where(x => x.Id == id).FirstOrDefault();
             ViewBag.CategoryId = new SelectList(_context.Categories.ToList(), "Id", "Name");
 
@@ -96,6 +100,7 @@ namespace CrudApp.Controllers
                 model.Image = fileName;
                 model.UpdatedDate = DateTime.Now;
                 model.CreatedDate = currentProduct.CreatedDate;
+                Utils.Email.SendEmail("nigarmammadova4t@gmail.com", "Nigar", "Kitab admin terefinden qiymetlendirirlecek", model.Name);
                 //var currentPhotoPath= Path.Combine(_environment.WebRootPath, "Image", currentProduct.Image);
                 //System.IO.File.Delete(currentPhotoPath);
                 _context.Entry(currentProduct).State = EntityState.Detached;
@@ -107,16 +112,16 @@ namespace CrudApp.Controllers
                 //_context.Entry(contextModel).Property(p => p.Photo).IsModified = false;
                 model.Image = currentProduct.Image;
             }
-            model.Status = (int)Utils.Enums.Status.Active;
 
-
+            model.Status = (int)Utils.Enums.Status.Waiting;              
             var entity = _context.Entry(model);
             _context.Entry(model).State = EntityState.Modified;
-
 
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+       
 
         public IActionResult BookGrid()
         {
@@ -126,6 +131,9 @@ namespace CrudApp.Controllers
         public IActionResult BookDetails(Guid id)
         {
             var model = _context.Products.FirstOrDefault(x => x.Id == id);
+            ViewBag.day = model.CreatedDate.Day;
+            ViewBag.Month = model.CreatedDate.ToString("MMMM");
+            ViewBag.Date = method.RecipeDate(DateTime.Now, model.CreatedDate);
             return View(model);
         }
 

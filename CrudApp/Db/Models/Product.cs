@@ -15,7 +15,7 @@ namespace CrudApp.Db.Models
         public string PageCount { get; set; }
         public string Image { get; set; }
         public int Status { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public Guid? ModifyUserId { get; set; }
         public string Description { get; set; }

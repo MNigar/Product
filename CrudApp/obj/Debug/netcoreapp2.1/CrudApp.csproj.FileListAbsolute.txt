@@ -21,7 +21,6 @@ D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\en\CrudApp.resourc
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.TagHelpers.input.cache
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.TagHelpers.output.cache
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.RazorCoreGenerate.cache
-D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Index.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_Layout.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
@@ -49,9 +48,7 @@ D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Pages\_Layou
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Pages\_ViewImports.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Pages\_ViewStart.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout1.cshtml.g.cs
-D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Views.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
-D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\New.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Edit.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
 D:\CrudApp\CrudApp\bin\Debug\netcoreapp2.1\appsettings.json
@@ -111,3 +108,5 @@ D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.genruntimeconfig.cache
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\CrudApp.csproj.CopyComplete
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\BookGrid.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\BookDetails.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\BookDetails.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\BookGrid.cshtml.g.cs
