@@ -35,5 +35,11 @@ namespace CrudApp.Controllers
             return RedirectToAction("Index");
 
         }
+        [HttpGet]
+        public IActionResult CategoryGrid()
+        {
+            IEnumerable<Category> categories = _context.Categories.ToList().Where(x=>x.Status==(int)Utils.Enums.Status.Active);
+            return View(categories);
+        }
     }
 }

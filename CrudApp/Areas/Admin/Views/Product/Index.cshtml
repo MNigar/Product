@@ -1,0 +1,237 @@
+﻿@model IEnumerable<CrudApp.Db.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div>
+    <div class="col-2"> </div>
+    <div class="col-2">
+        <div class="row">
+            Active: <div style="width:20px;height:20px;border:1px solid black; background-color :antiquewhite"></div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="row">
+            Deactive: <div style="width:20px;height:20px;border:1px solid black; background-color :#948d8d"></div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="row">
+            New: <div style="width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        background-color: #efa115">
+            </div>
+        </div>
+
+    </div>
+    <div class="col-2">
+        <div class="row">
+            Updated: <div style="width:20px;height:20px;border:1px solid black; background-color :#ffd800"></div>
+        </div>
+    </div>
+    <br />
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                <label>No</label>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+          
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int num = 0;}
+
+        @foreach (var item in Model)
+        {
+            <input type="hidden" value="@item.Id" id="id" />
+
+            if (item.Status == 0)
+            {
+                <tr style="background-color: antiquewhite">
+
+                    @{num = num + 1;
+                    }
+
+                    <td>
+                        <label>@num</label>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PageCount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Image)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+
+
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+
+            if (item.Status == 1)
+            {
+    <tr style="background-color: #948d8d">
+        @{num = num + 1;
+        }
+
+        <td>
+            <label>@num</label>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+
+
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+    </tr>
+
+            }
+            if (item.Status == 3)
+            {
+    <tr style="background-color: #efa115 ">
+        @{num = num + 1;
+        }
+
+        <td>
+            <label>@num</label>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+
+
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+    </tr>
+            }
+
+            if (item.Status == 2)
+            {
+    <tr style="background-color: #ffd800 ">
+        @{num = num + 1;
+        }
+
+        <td>
+            <label>@num</label>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+
+
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+    </tr>
+            }
+
+
+        }
+    </tbody>
+</table>

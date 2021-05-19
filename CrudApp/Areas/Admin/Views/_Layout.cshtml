@@ -548,63 +548,75 @@
         <div class="main-content">
 
             <!-- begin::page-header -->
+           
+            <div class="container-fluid">
 
-          
-            <!-- end::footer -->
-
+                <div class="row">
+                    <div class="col-md-12">
+                  
+                            <div class="card-body" style="background-color:white; color:black;">
+                                <div class="row align-items-center">
+                                    <div class="col-md-7">
+                                        
+                                            @RenderSection("scripts", required: false)
+                                            @RenderBody()
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
         </div>
-        <!-- end::main-content -->
-        @RenderSection("scripts", required: false)
-        @RenderBody()
-    </div>
-    <!-- end::main -->
-    <!-- Plugin scripts -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/bundle.js"></script>
+                <!-- end::main -->
+                <!-- Plugin scripts -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/bundle.js"></script>
 
-    <!-- Chartjs -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/charts/chartjs/chart.min.js"></script>
+                <!-- Chartjs -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/charts/chartjs/chart.min.js"></script>
 
-    <!-- Apex chart -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/charts/apex/apexcharts.min.js"></script>
+                <!-- Apex chart -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/charts/apex/apexcharts.min.js"></script>
 
-    <!-- Circle progress -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/circle-progress/circle-progress.min.js"></script>
+                <!-- Circle progress -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/circle-progress/circle-progress.min.js"></script>
 
-    <!-- Peity -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/charts/peity/jquery.peity.min.js"></script>
-    <script src="~/Template/bordash.laborasyon.com/demos/default/assets/js/examples/charts/peity.js"></script>
+                <!-- Peity -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/charts/peity/jquery.peity.min.js"></script>
+                <script src="~/Template/bordash.laborasyon.com/demos/default/assets/js/examples/charts/peity.js"></script>
 
-    <!-- Datepicker -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/datepicker/daterangepicker.js"></script>
+                <!-- Datepicker -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/datepicker/daterangepicker.js"></script>
 
-    <!-- Slick -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/slick/slick.min.js"></script>
+                <!-- Slick -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/slick/slick.min.js"></script>
 
-    <!-- Vamp -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/vmap/jquery.vmap.min.js"></script>
-    <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/vmap/maps/jquery.vmap.usa.js"></script>
-    <script src="~/Template/bordash.laborasyon.com/demos/default/assets/js/examples/vmap.js"></script>
+                <!-- Vamp -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/vmap/jquery.vmap.min.js"></script>
+                <script src="~/Template/bordash.laborasyon.com/demos/default/vendors/vmap/maps/jquery.vmap.usa.js"></script>
+                <script src="~/Template/bordash.laborasyon.com/demos/default/assets/js/examples/vmap.js"></script>
 
-    <!-- Dashboard scripts -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/assets/js/examples/dashboard.js"></script>
-    <div class="colors">
-        <!-- To use theme colors with Javascript -->
-        <div class="bg-primary"></div>
-        <div class="bg-primary-bright"></div>
-        <div class="bg-secondary"></div>
-        <div class="bg-secondary-bright"></div>
-        <div class="bg-info"></div>
-        <div class="bg-info-bright"></div>
-        <div class="bg-success"></div>
-        <div class="bg-success-bright"></div>
-        <div class="bg-danger"></div>
-        <div class="bg-danger-bright"></div>
-        <div class="bg-warning"></div>
-        <div class="bg-warning-bright"></div>
-    </div>
+                <!-- Dashboard scripts -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/assets/js/examples/dashboard.js"></script>
+                <div class="colors">
+                    <!-- To use theme colors with Javascript -->
+                    <div class="bg-primary"></div>
+                    <div class="bg-primary-bright"></div>
+                    <div class="bg-secondary"></div>
+                    <div class="bg-secondary-bright"></div>
+                    <div class="bg-info"></div>
+                    <div class="bg-info-bright"></div>
+                    <div class="bg-success"></div>
+                    <div class="bg-success-bright"></div>
+                    <div class="bg-danger"></div>
+                    <div class="bg-danger-bright"></div>
+                    <div class="bg-warning"></div>
+                    <div class="bg-warning-bright"></div>
+                </div>
 
-    <!-- App scripts -->
-    <script src="~/Template/bordash.laborasyon.com/demos/default/assets/js/app.min.js"></script>
+                <!-- App scripts -->
+                <script src="~/Template/bordash.laborasyon.com/demos/default/assets/js/app.min.js"></script>
 </body>
 
 <!-- Mirrored from bordash.laborasyon.com/demos/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Mar 2021 07:35:03 GMT -->

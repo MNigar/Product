@@ -24,6 +24,8 @@ namespace CrudApp.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Image");
+
                     b.Property<string>("Name");
 
                     b.Property<int>("Status");

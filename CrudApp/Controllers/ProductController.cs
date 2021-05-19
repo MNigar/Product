@@ -40,7 +40,7 @@ namespace CrudApp.Controllers
         public IActionResult Create()
         {
             IEnumerable<Category> category = _context.Categories.ToList();
-            ViewBag.CategoryId = new SelectList(_context.Categories.ToList(), "Id", "Name"); 
+            ViewBag.CategoryId = new SelectList(_context.Categories.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active), "Id", "Name"); 
             return View();
         }
         [HttpPost]
@@ -54,7 +54,7 @@ namespace CrudApp.Controllers
             {
                 if (Utils.Check.CheckFormat(image.ContentType))
                 {
-                    string fileName = $"_{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
+                    string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
 
                     string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
                     FileStream fileStream = new FileStream(path, FileMode.CreateNew);
@@ -82,7 +82,7 @@ namespace CrudApp.Controllers
         {
             var request = HttpContext.Request;
             var model = _context.Products.Where(x => x.Id == id).FirstOrDefault();
-            ViewBag.CategoryId = new SelectList(_context.Categories.ToList(), "Id", "Name");
+            ViewBag.CategoryId = new SelectList(_context.Categories.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active), "Id", "Name");
 
             return View(model);
         }
@@ -101,15 +101,11 @@ namespace CrudApp.Controllers
                 model.UpdatedDate = DateTime.Now;
                 model.CreatedDate = currentProduct.CreatedDate;
                 Utils.Email.SendEmail("nigarmammadova4t@gmail.com", "Nigar", "Kitab admin terefinden qiymetlendirirlecek", model.Name);
-                //var currentPhotoPath= Path.Combine(_environment.WebRootPath, "Image", currentProduct.Image);
-                //System.IO.File.Delete(currentPhotoPath);
                 _context.Entry(currentProduct).State = EntityState.Detached;
             }
 
             if (image == null)
             {
-               
-                //_context.Entry(contextModel).Property(p => p.Photo).IsModified = false;
                 model.Image = currentProduct.Image;
             }
 
@@ -123,9 +119,15 @@ namespace CrudApp.Controllers
 
        
 
-        public IActionResult BookGrid()
+        public IActionResult BookGrid(Guid? id)
         {
-            IEnumerable<Product> book = _context.Products.ToList();
+            IEnumerable<Product> book = _context.Products.ToList().Where(x=>x.Status==(int)Utils.Enums.Status.Active);
+            if (id != null)
+            {
+                IEnumerable<Product> bookList = _context.Products.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active && x.CategoryId==id);
+
+                return View(bookList);
+            }
             return View(book);
         }
         public IActionResult BookDetails(Guid id)

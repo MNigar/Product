@@ -63,7 +63,7 @@ using CrudApp.Db.Models;
             WriteLiteral("<html>\r\n");
             EndContext();
             BeginContext(112, 4787, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "06c0db6abdd242b5981f70064365660c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "46a34915f23748bca5a91967749d9e0f", async() => {
                 BeginContext(118, 732, true);
                 WriteLiteral(@"
     <div class=""metro_subheader dark-overlay dark-overlay-2"" style=""        background-image: url(/Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img/subheader.jpg)"">
@@ -84,7 +84,7 @@ using CrudApp.Db.Models;
     ");
                 EndContext();
                 BeginContext(850, 4012, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ce72fec7372495999dbb34417da50eb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0429a3912924442b734a659a827653f", async() => {
                     BeginContext(856, 602, true);
                     WriteLiteral(@"
         <div class=""section"">
@@ -105,7 +105,7 @@ using CrudApp.Db.Models;
                                 ");
                     EndContext();
                     BeginContext(1458, 62, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4206d35ada54b718e3bba5db5b6d30f", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c23a7f3e6c6249c492ee9830108bdde2", async() => {
                         BeginContext(1500, 11, true);
                         WriteLiteral("Choose here");
                         EndContext();
@@ -146,7 +146,7 @@ using CrudApp.Db.Models;
                     WriteLiteral("                                    ");
                     EndContext();
                     BeginContext(1656, 42, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "772f41fdfd454bacb0fe2290bf08621b", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ab1ee3e48054470a4fe84473e5abca7", async() => {
                         BeginContext(1681, 8, false);
 #line 43 "D:\COVID1904\.NETCORE\Product\CrudApp\Views\Product\BookGrid.cshtml"
                                                        Write(cat.Name);
@@ -229,7 +229,7 @@ WriteAttributeValue("", 2836, i.Id, 2836, 5, false);
                     WriteLiteral(">\r\n\r\n                                        ");
                     EndContext();
                     BeginContext(2887, 84, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "3d452c68d410402a8e93d05af26d02ba", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b3e95d5b351a45bf925b8d209ef753a3", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
