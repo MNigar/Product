@@ -24,17 +24,21 @@ namespace CrudApp
         {
             _configuration = configuration;
         }
+      
 
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddDbContext<ProductContext>(options =>
             {
                 options.UseSqlServer(_configuration["ConnectionStrings:DefaultConnection"]);
             });
-
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(60);
+            });
             services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(opt => {
 
                 opt.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResource));
@@ -50,6 +54,7 @@ namespace CrudApp
                 op.SupportedCultures = supportedCultures;
                 op.SupportedUICultures = supportedCultures;
             });
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,14 +81,16 @@ namespace CrudApp
             //});
 
             app.UseRequestLocalization();
-
+            app.UseSession();
             app.UseStatusCodePages();
             app.UseMvcWithDefaultRoute();
             //app.Run(async (context) =>
             //{
             //    await context.Response.WriteAsync("Hello World!");
             //});
-             app.UseMvc(routes =>
+       
+
+            app.UseMvc(routes =>
              {
                  routes.MapRoute(
                name: "areas",
@@ -93,6 +100,7 @@ namespace CrudApp
                      name: "default",
                      template: "{controller=Product}/{action=Index}/{id?}");
              });
+
         }
     }
 }

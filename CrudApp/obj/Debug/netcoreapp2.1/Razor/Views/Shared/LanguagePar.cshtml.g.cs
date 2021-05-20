@@ -63,12 +63,12 @@ using CrudApp.Db.Models;
             WriteLiteral("<ul class=\"navbar-nav\">\r\n    <li class=\"nav-item\">\r\n        ");
             EndContext();
             BeginContext(634, 288, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f3f23aa4d634b44bec8b31db30b5483", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0498f518ff743eb83ac95522ac67701", async() => {
                 BeginContext(741, 14, true);
                 WriteLiteral("\r\n            ");
                 EndContext();
                 BeginContext(755, 150, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e4c5835493a47a7a81924904a9c8f33", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f60e10eeb1348ddbd0df35240f2cf5b", async() => {
                     BeginContext(882, 14, true);
                     WriteLiteral("\r\n            ");
                     EndContext();

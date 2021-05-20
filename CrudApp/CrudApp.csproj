@@ -463,6 +463,7 @@
 
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.4.1" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.7" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.3" />

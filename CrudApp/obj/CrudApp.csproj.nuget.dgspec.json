@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[4.4.1, )"
             },
+            "Microsoft.AspNet.WebPages": {
+              "target": "Package",
+              "version": "[3.2.7, )"
+            },
             "Microsoft.AspNetCore": {
               "target": "Package",
               "version": "[2.1.7, )"

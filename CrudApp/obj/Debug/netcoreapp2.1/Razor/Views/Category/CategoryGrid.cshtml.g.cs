@@ -58,7 +58,7 @@ using CrudApp.Db.Models;
             WriteLiteral("\r\n    <html>\r\n    ");
             EndContext();
             BeginContext(118, 1784, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acbb7ea719494e91b54cb8724d795dc7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a3b8ec75fb2f4a388c44f5aa8f0af4c6", async() => {
                 BeginContext(124, 978, true);
                 WriteLiteral(@"
         <!-- Subheader Start -->
@@ -106,7 +106,7 @@ WriteAttributeValue("", 1284, i.Id, 1284, 5, false);
                 WriteLiteral(" class=\"metro_recipe-category\">\r\n                                <div class=\"metro_recipe-category-thumb\">\r\n                                    ");
                 EndContext();
                 BeginContext(1435, 82, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f1112f425d0049bc91374119f24a5704", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ad087fd9ff784042bc7f955b4bee5d5e", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

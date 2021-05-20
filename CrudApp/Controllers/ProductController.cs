@@ -62,9 +62,10 @@ namespace CrudApp.Controllers
                     model.Image = fileName;
                     model.CreatedDate = DateTime.Now;
                     model.Status = (int) Utils.Enums.Status.Waiting;
+                    model.UserId =new Guid(HttpContext.Session.GetString("Id"));
                     await _context.Products.AddAsync(model);
                     await _context.SaveChangesAsync();
-                    Utils.Email.SendEmail("nigarmammadova4t@gmail.com", "Nigar", "Kitab admin terefinden qiymetlendirirlecek", model.Name);
+                    Utils.Email.SendEmail(HttpContext.Session.GetString("Email"), HttpContext.Session.GetString("Name"), "Kitab admin terefinden qiymetlendirirlecek", model.Name);
                 }
                     return RedirectToAction("Index");
                 
@@ -100,7 +101,9 @@ namespace CrudApp.Controllers
                 model.Image = fileName;
                 model.UpdatedDate = DateTime.Now;
                 model.CreatedDate = currentProduct.CreatedDate;
-                Utils.Email.SendEmail("nigarmammadova4t@gmail.com", "Nigar", "Kitab admin terefinden qiymetlendirirlecek", model.Name);
+                model.ModifyUserId = new Guid(HttpContext.Session.GetString("Id"));
+                
+                Utils.Email.SendEmail(HttpContext.Session.GetString("Email"), HttpContext.Session.GetString("Name"), "Kitab admin terefinden qiymetlendirirlecek", model.Name);
                 _context.Entry(currentProduct).State = EntityState.Detached;
             }
 

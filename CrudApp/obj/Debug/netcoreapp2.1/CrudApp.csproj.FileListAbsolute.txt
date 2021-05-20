@@ -115,3 +115,6 @@ D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\CategoryGrid.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Product\Details.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Registration.cshtml.g.cs
+D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Login.cshtml.g.cs

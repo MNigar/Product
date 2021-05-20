@@ -1,5 +1,6 @@
 ﻿using CrudApp.Db;
 using CrudApp.Db.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -36,16 +37,34 @@ namespace CrudApp.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return View(model);
         }
-        public async Task<IActionResult> Cancel(Guid id)
+        
+        //public async Task<IActionResult> Cancel(Guid id,string message)
+        //{
+        //    var model = _context.Products.Where(x => x.Id == id).FirstOrDefault();
+        //    model.Status = (int)Utils.Enums.Status.Deactive;
+        //    var entity = _context.Entry(model);
+        //    _context.Entry(model).State = EntityState.Modified;
+
+        //    await _context.SaveChangesAsync();
+
+        //    return View(model);
+        //}
+
+
+        [HttpPost]
+        public JsonResult Cancel(AjaxModel res)
         {
-            var model = _context.Products.Where(x => x.Id == id).FirstOrDefault();
+
+            var model = _context.Products.Include("User").Where(x => x.Id == res.Id).FirstOrDefault();
             model.Status = (int)Utils.Enums.Status.Deactive;
             var entity = _context.Entry(model);
             _context.Entry(model).State = EntityState.Modified;
 
-            await _context.SaveChangesAsync();
+             _context.SaveChanges();
+            Utils.Email.SendEmail(model.User.Email, model.User.Name, res.message, model.Name);
 
-            return View(model);
+            return new JsonResult(new { message = "OK" });
+
         }
         public IActionResult Details(Guid id)
         {

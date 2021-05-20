@@ -27,7 +27,7 @@ namespace CrudApp.Utils
 
                 emailMessage.To.Add(userEmail);
                 emailMessage.From = new MailAddress("tricklyrecipeapp@gmail.com");
-                emailMessage.Subject = ($"Hormetli {username}  {Name}  {Text}");
+                emailMessage.Subject = ($"Hormetli {username}  {Name}");
                 emailMessage.Body = ($"Hormetli {username}  {Name}  {Text}");
 
 

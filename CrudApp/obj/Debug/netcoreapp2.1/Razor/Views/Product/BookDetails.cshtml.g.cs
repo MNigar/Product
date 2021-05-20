@@ -61,7 +61,7 @@ using CrudApp.Db.Models;
             WriteLiteral("<html>\r\n");
             EndContext();
             BeginContext(99, 3738, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab522a7a71104879b3985678b8d87b92", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e01a2c8e9fb04c4d9f2b5e3e829de479", async() => {
                 BeginContext(105, 1079, true);
                 WriteLiteral(@"
     
@@ -101,7 +101,7 @@ using CrudApp.Db.Models;
                 WriteLiteral("</h2>\r\n\r\n\r\n                        <div class=\"metro_post-single-thumb\">\r\n                            ");
                 EndContext();
                 BeginContext(1297, 68, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1484508019024a8bacfc6e98229c0406", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2d7b5f53cf9144469f8008aa9913c64e", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
