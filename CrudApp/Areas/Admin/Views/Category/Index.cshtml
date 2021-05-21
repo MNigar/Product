@@ -4,17 +4,20 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>@stringLocalizer["Categories"]</h2>
 <div class="container">
     <hr />
     <p>
-        <a asp-action="Create">Create New</a>
+
+        <a asp-action="Create">@stringLocalizer["CreateNew"]</a>
+
     </p>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
+                    @stringLocalizer["Name"]
                 </th>
                 
                 <th>Detallar</th>

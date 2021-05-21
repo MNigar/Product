@@ -1,0 +1,13 @@
+﻿@model IEnumerable<CrudApp.Db.Models.Category>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="sidebar-widget">
+    <h5 class="widget-title"> Post Categories </h5>
+    <ul class="sidebar-widget-list">
+        @foreach (var i in Model)
+        {
+            <li> <a href="/Product/BookGrid/@i.Id"> @i.Name </a> </li>
+        }
+    </ul>
+</div>

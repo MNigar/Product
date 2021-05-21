@@ -6,16 +6,11 @@
 <html>
 <body>
     
-    <div class="metro_subheader dark-overlay dark-overlay-2" style="        background-image: url(/Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img/subheader.jpg)">
+    <div class="metro_subheader dark-overlay dark-overlay-2" style="background-image: url(/Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img/@ViewData["image"])">
         <div class="container">
             <div class="metro_subheader-inner">
-                <h1>Recipe Details</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Book Details</li>
-                    </ol>
-                </nav>
+                <h1>Book Details</h1>
+                
             </div>
         </div>
     </div>
@@ -56,16 +51,17 @@
 
                                 <div class="col-lg-6">
                                     <div class="metro_ingredients">
-                                        <h4>About</h4>
+                                        <h4>@stringLocalizer["About"]</h4>
                                         <ul>
 
                                             <li>
-                                                <i class="fas fa-book">Book Name:</i> @Model.Name
+                                                <i class="fas fa-book">@stringLocalizer["Name"]:</i> @Model.Name
                                             </li>
 
-                                            <li>  <i class="fas fa-user-edit">Author:</i> @Model.Author </li>
-                                            <li>  <i class="fas fa-book">Page Count:</i> @Model.PageCount </li>
-                                            <li>  <i class="fas fa-book">Page Count:</i> @Model.PublishingHouse </li>
+                                            <li>  <i class="fas fa-user-edit">@stringLocalizer["Author"]:</i> @Model.Author </li>
+                                            <li>  <i class="fas fa-book">@stringLocalizer["Page Count"]:</i> @Model.PageCount </li>
+                                            <li>  <i class="fas fa-book">@stringLocalizer["PublishingHouse"]:</i> @Model.PublishingHouse </li>
+                                            <li>  <i class="fas fa-book">@stringLocalizer["Category"]:</i> @Model.Category.Name </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -77,7 +73,7 @@
 
                                 <div class="col-lg-10">
                                     <div class="metro_ingredients">
-                                        <h4>Description</h4>
+                                        <h4>@stringLocalizer["Description"]</h4>
                                         <ul>
 
                                             <li>

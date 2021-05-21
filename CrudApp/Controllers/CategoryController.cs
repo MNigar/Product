@@ -40,7 +40,15 @@ namespace CrudApp.Controllers
         {
             
             IEnumerable<Category> categories = _context.Categories.ToList().Where(x=>x.Status==(int)Utils.Enums.Status.Active);
+            ViewData["image"] = _context.SubHeaders.LastOrDefault().Image;
+
             return View(categories);
+        }
+        public  IActionResult CategoryList()
+        {
+            IEnumerable<Category> category =  _context.Categories.ToList();
+            
+            return PartialView(category);
         }
     }
 }

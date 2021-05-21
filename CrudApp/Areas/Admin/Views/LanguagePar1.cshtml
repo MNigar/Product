@@ -7,7 +7,7 @@
 }
 <ul class="navbar-nav">
     <li class="nav-item">
-        <form asp-action="CultureManagemenet" asp-controller="/Admin/Category" method="post" asp-route-returnUrl="@returnUrl">
+        <form asp-action="CultureManagemenet" asp-controller="/Category" method="post" asp-route-returnUrl="@returnUrl">
             <select name="culture" asp-for="@culture.RequestCulture.UICulture.Name" asp-items="cultureList" onchange="this.form.submit();">
             </select>
         </form>

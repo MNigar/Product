@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About Us" xml:space="preserve">
+    <value>Haqqımızda</value>
+  </data>
+  <data name="Add Book" xml:space="preserve">
+    <value>Kitab əlavə et</value>
+  </data>
   <data name="All  Books" xml:space="preserve">
     <value>Bütün kitablar</value>
   </data>
@@ -131,6 +137,12 @@
   </data>
   <data name="Books" xml:space="preserve">
     <value>Kitablar</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Janrlar</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Janr</value>
   </data>
   <data name="CreatedDate" xml:space="preserve">
     <value>Daxil edildiyi tarix</value>
@@ -147,14 +159,17 @@
   <data name="Edit" xml:space="preserve">
     <value>Düzəliş et</value>
   </data>
-  <data name="EditedDate" xml:space="preserve">
-    <value>Dəyişiklik edildiyi tarix</value>
-  </data>
   <data name="Home Page" xml:space="preserve">
     <value>Ana Səhifə</value>
   </data>
   <data name="Image" xml:space="preserve">
     <value>Şəkil</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Siyahı</value>
+  </data>
+  <data name="ModifyUser" xml:space="preserve">
+    <value>Dəyişiklik edən Şəxs</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Ad</value>
@@ -162,10 +177,22 @@
   <data name="PageCount" xml:space="preserve">
     <value>Səhifə sayı</value>
   </data>
+  <data name="Popular Books" xml:space="preserve">
+    <value>Məşhur Kitablar</value>
+  </data>
   <data name="Profile" xml:space="preserve">
     <value>Hesab</value>
   </data>
-  <data name="Submit Book" xml:space="preserve">
-    <value>Kitab əlavə et</value>
+  <data name="PublishingHouse" xml:space="preserve">
+    <value>Nəşriyyat evi</value>
+  </data>
+  <data name="Quick Links" xml:space="preserve">
+    <value>Keçidlər</value>
+  </data>
+  <data name="Recent Posts" xml:space="preserve">
+    <value>Son postlar</value>
+  </data>
+  <data name="UpdatedDate" xml:space="preserve">
+    <value>Dəyişiklik edildiyi tarix</value>
   </data>
 </root>

@@ -40,21 +40,28 @@ namespace CrudApp.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Author");
+                    b.Property<string>("Author")
+                        .IsRequired();
 
                     b.Property<Guid>("CategoryId");
 
                     b.Property<DateTime>("CreatedDate");
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Image");
+                    b.Property<string>("Image")
+                        .IsRequired();
 
                     b.Property<Guid?>("ModifyUserId");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
-                    b.Property<string>("PageCount");
+                    b.Property<string>("PageCount")
+                        .IsRequired();
+
+                    b.Property<string>("PublishingHouse");
 
                     b.Property<int>("Status");
 
@@ -69,6 +76,19 @@ namespace CrudApp.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("CrudApp.Db.Models.SubHeader", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SubHeaders");
                 });
 
             modelBuilder.Entity("CrudApp.Db.Models.User", b =>

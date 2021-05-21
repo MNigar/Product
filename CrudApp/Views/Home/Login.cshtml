@@ -19,18 +19,25 @@
                         <form asp-action="Login">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
-                                <label asp-for="Email" class="control-label"></label>
+                                @if (TempData["Message"] != null)
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        @TempData["Message"]
+                                    </div>
+
+                                }
+                                <label class="control-label">  @stringLocalizer["Email"]</label>
                                 <input asp-for="Email" class="form-control" />
                                 <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Password" class="control-label"></label>
+                                <label  class="control-label"> @stringLocalizer["Password"]</label>
                                 <input asp-for="Password" class="form-control" type="password" />
                                 <span asp-validation-for="Password" class="text-danger"></span>
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" value="Create" class="btn btn-default" />
+                                <input type="submit" value="Login" class="btn btn-default" />
                             </div>
                             @if (TempData["LoginError"] != null)
                             {
@@ -47,6 +54,5 @@
     </div>
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
 </div>
 

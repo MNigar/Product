@@ -29,7 +29,17 @@ namespace CrudApp.Controllers
             return View();
         }
 
-      
+        public IActionResult Profiles()
+        {
+            if (HttpContext.Session.GetString("Id") == null)
+            {
+                TempData["Message"] = "Please login ";
+                return RedirectToAction("Login", "Home");
+            }
+           
+            return RedirectToAction("Index", "Product");
+
+        }
         public IActionResult Registration()
         {
             return View();
@@ -88,7 +98,7 @@ namespace CrudApp.Controllers
                     HttpContext.Session.SetString(SessionId, check.Id.ToString());
                     HttpContext.Session.SetString(SessionName, check.Name.ToString());
                    
-                    return RedirectToAction("Home", "Index");
+                    return RedirectToAction("HomePage","Product");
                     //}
 
                 }
@@ -105,12 +115,13 @@ namespace CrudApp.Controllers
         }
 
         [HttpGet]
-        public ActionResult Logout()
+        public IActionResult Logout()
         {
             HttpContext.Session.SetString(SessionEmail, null);
             HttpContext.Session.SetString(SessionId, null);
             HttpContext.Session.SetString(SessionName, null);
             return RedirectToAction("Login");
         }
+        
     }
 }

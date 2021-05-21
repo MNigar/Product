@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<CrudApp.Db.Models.Product>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = stringLocalizer["Index"];
     Layout = "~/Views/Shared/_Layout2.cshtml";
 
 }
 
-<h2>Index</h2>
+<h2>@stringLocalizer["Books"]</h2>
 
 <p>
     <a asp-action="Create">@stringLocalizer["CreateNew"]</a>

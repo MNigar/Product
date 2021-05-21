@@ -1,11 +1,13 @@
 ﻿using CrudApp.Db;
 using CrudApp.Db.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Helpers;
@@ -21,10 +23,12 @@ namespace CrudApp.Areas.Admin.Controllers
         const string LoginError = "LoginError";
 
         private readonly ProductContext _context;
-        public HomeController(ProductContext context)
+        private readonly IHostingEnvironment _environment;
+
+        public HomeController(ProductContext context,IHostingEnvironment environment)
         {
             _context = context;
-           
+            _environment = environment;
         }
    
         public IActionResult Index()
@@ -33,7 +37,7 @@ namespace CrudApp.Areas.Admin.Controllers
         }
         public IActionResult Top()
         {
-          var users=  _context.Users.Include("Products").Where(x => x.Products.Count > 3);
+          var users=  _context.Users.Include("Products").Where(x => x.Products.Count>1);
 
             return View(users);
         }
@@ -75,6 +79,31 @@ namespace CrudApp.Areas.Admin.Controllers
 
             }
             return View();
+        }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(SubHeader model, IFormFile image)
+        {
+            if (ModelState.IsValid)
+            {
+                if (Utils.Check.CheckFormat(image.ContentType))
+                {
+                    string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
+                    string path = Path.Combine(_environment.WebRootPath, "Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img", fileName);
+                    FileStream fileStream = new FileStream(path, FileMode.CreateNew);
+                    await image.CopyToAsync(fileStream);
+                    model.Image = fileName;
+                    
+                    await _context.SubHeaders.AddAsync(model);
+                    await _context.SaveChangesAsync();
+                }
+            }
+            return RedirectToAction("Index");
+
         }
     }
 }

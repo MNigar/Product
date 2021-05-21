@@ -28,7 +28,8 @@ namespace CrudApp.Controllers
         BookDataController method = new BookDataController();
         public IActionResult Index()
         {
-            IEnumerable<Product> products = _context.Products.ToList();
+
+            IEnumerable<Product> products = _context.Products.Include("User").Where(x=>x.UserId.ToString()== HttpContext.Session.GetString("Id")).ToList();
             return View(products);
         }
         public IActionResult CultureManagemenet(string culture, string returnUrl)
@@ -48,6 +49,11 @@ namespace CrudApp.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            if (HttpContext.Session.GetString("Id") == null)
+            {
+                TempData["Message"] = "Please login for adding book";
+                return RedirectToAction("Login", "Home");
+            }
             IEnumerable<Category> category = _context.Categories.ToList();
             ViewBag.CategoryId = new SelectList(_context.Categories.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active), "Id", "Name"); 
             return View();
@@ -59,8 +65,7 @@ namespace CrudApp.Controllers
             model.Id = Guid.NewGuid();
             
             
-            if (ModelState.IsValid)
-            {
+          
                 if (Utils.Check.CheckFormat(image.ContentType))
                 {
                     string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
@@ -78,9 +83,8 @@ namespace CrudApp.Controllers
                 }
                     return RedirectToAction("Index");
                 
-            }
-            else
-                return RedirectToAction("Index");
+            
+           
         }
         [HttpGet]
         public IActionResult New()
@@ -91,7 +95,7 @@ namespace CrudApp.Controllers
         public IActionResult Edit(Guid id)
         {
             var request = HttpContext.Request;
-            var model = _context.Products.Where(x => x.Id == id).FirstOrDefault();
+            var model = _context.Products.Where(x => x.Id == id ).FirstOrDefault();
             ViewBag.CategoryId = new SelectList(_context.Categories.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active), "Id", "Name");
 
             return View(model);
@@ -133,27 +137,62 @@ namespace CrudApp.Controllers
 
         public IActionResult BookGrid(Guid? id)
         {
-            IEnumerable<Product> book = _context.Products.ToList().Where(x=>x.Status==(int)Utils.Enums.Status.Active);
+            IEnumerable<Product> book = _context.Products.Include("Category").ToList().Where(x=>x.Status==(int)Utils.Enums.Status.Active);
+            ViewBag.Category = _context.Categories.Where(x => x.Status == (int)Enums.Status.Active).ToList().Distinct();
+
             if (id != null)
             {
-                IEnumerable<Product> bookList = _context.Products.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active && x.CategoryId==id);
+                IEnumerable<Product> bookList = _context.Products.Include("Category").ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active && x.CategoryId==id);
 
                 return View(bookList);
             }
+            ViewData["image"] = _context.SubHeaders.LastOrDefault().Image;
             return View(book);
         }
+
         public IActionResult BookDetails(Guid id)
         {
-            var model = _context.Products.FirstOrDefault(x => x.Id == id);
+            var model = _context.Products.Include("Category").Include("User").FirstOrDefault(x => x.Id == id);
             ViewBag.day = model.CreatedDate.Day;
             ViewBag.Month = model.CreatedDate.ToString("MMMM");
             ViewBag.Date = method.RecipeDate(DateTime.Now, model.CreatedDate);
+            ViewData["image"] = _context.SubHeaders.LastOrDefault().Image;
+
             return View(model);
         }
+
         public IActionResult HomePage()
         {
-            IEnumerable<Category> categories = _context.Categories.ToList();
+            IEnumerable<Category> categories = _context.Categories.Where(x => x.Status == (int)Enums.Status.Active).ToList();
+            ViewBag.Book = _context.Products.Include("User").Include("Category").Where(x => x.Status == (int)Enums.Status.Active);
+            ViewData["image"] = _context.SubHeaders.LastOrDefault().Image;
+
             return View(categories);
+        }
+        [HttpGet]
+        public ActionResult Search(string Name, string categoryId, string Author)
+        {
+            IEnumerable<Product> result = _context.Products.Include("Category").ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active);
+
+            if (!String.IsNullOrEmpty(Name))
+            {
+                result = result.Where(x => x.Name.ToLower().Contains(Name.ToLower()));
+            }
+
+            if (!String.IsNullOrEmpty(Author))
+            {
+                result = result.Where(x => x.User.Name.ToLower().Contains(Author.ToLower()));
+            }
+            if (!String.IsNullOrEmpty(categoryId))
+            {
+                result = result.Where(x => x.CategoryId.ToString() ==categoryId);
+            }
+   
+            ViewBag.Category = _context.Categories.Where(x => x.Status == (int)Enums.Status.Active).ToList().Distinct();
+            ViewData["image"] = _context.SubHeaders.LastOrDefault().Image;
+
+            return View(result);
+
         }
     }
 }
