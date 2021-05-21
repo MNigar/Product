@@ -108,7 +108,7 @@
         @*@Html.Partial("~/Views/Partial/Logo.cshtml")*@
         <ul>
             <li class="menu-item menu-item-has-children">
-                <a href="/Recipes/Home/">Home Pages</a>
+                <a href="/Product/HomePage/">Home Pages</a>
                 @*<ul class="sub-menu">
                         <li class="menu-item"> <a href="index.html">Home v1</a> </li>
                         <li class="menu-item"> <a href="home-v2.html">Home v2</a> </li>
@@ -171,7 +171,7 @@
                     <!-- Call to Action -->
                     <div class="metro_header-controls">
 
-                        <a href="/Product/Create" class="metro_btn-custom">Submit Book</a>
+                        <a href="/Product/Create" class="metro_btn-custom">@stringLocalizer["Submit Book"]</a>
 
                         <div class="aside-toggler aside-trigger-left">
                             <span></span>
@@ -182,7 +182,7 @@
                     </div>
                     <div class="metro_header-controls">
 
-                        <a href="/Product/Index" class="metro_btn-custom">Profile</a>
+                        <a href="/Product/Index" class="metro_btn-custom">@stringLocalizer["Profile"]</a>
 
 
 
@@ -210,7 +210,8 @@
                     <!-- Menu -->
                     <ul class="navbar-nav">
                         <li class="menu-item menu-item-has-children">
-                            <a href="/Recipes/Home/">Home Pages</a>
+
+                            <a href="/Product/HomePage/">@stringLocalizer["Home Page"]</a>
                             @*<ul class="sub-menu">
                                     <li class="menu-item"> <a href="index.html">Home v1</a> </li>
                                     <li class="menu-item"> <a href="home-v2.html">Home v2</a> </li>
@@ -219,17 +220,17 @@
 
 
                         <li class="menu-item menu-item-has-children mega-menu-wrapper">
-                            <a href="#">Books</a>
+                            <a href="#">@stringLocalizer["Books"]</a>
                             <ul class="sub-menu">
                                 <li>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <div class="mega-menu-item">
-                                                    <h6>Book Pages</h6>
-                                                    <a href="/Product/BookGrid">All  Books</a>
+                                                    <h6>@stringLocalizer["Book Pages"]</h6>
+                                                    <a href="/Product/BookGrid">@stringLocalizer["All  Books"]</a>
 
-                                                    <a href="/Category/CategoryGrid">Book Janrs</a>
+                                                    <a href="/Category/CategoryGrid">@stringLocalizer["Book Janrs"]</a>
 
 
                                                 </div>
