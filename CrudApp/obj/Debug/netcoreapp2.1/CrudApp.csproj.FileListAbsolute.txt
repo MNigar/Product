@@ -90,8 +90,6 @@ D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\Index.cshtml.g.c
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Create.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Edit.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Index.cshtml.g.cs
-D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\New.cshtml.g.cs
-D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Views.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\LanguagePar.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout1.cshtml.g.cs
@@ -118,3 +116,13 @@ D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Registration.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Login.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Category\Details.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Category\Edit.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Login.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Product\Details.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\CategoryGrid.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Registration.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\LanguagePar.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\HomePage.cshtml.g.cs

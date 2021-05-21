@@ -3,6 +3,7 @@ using CrudApp.Db.Models;
 using CrudApp.Utils;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,14 @@ namespace CrudApp.Controllers
         {
             IEnumerable<Product> products = _context.Products.ToList();
             return View(products);
+        }
+        public IActionResult CultureManagemenet(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.Now.AddDays(30) });
+
+            return LocalRedirect(returnUrl);
         }
         [HttpGet]
         public IActionResult Views()
@@ -141,6 +150,10 @@ namespace CrudApp.Controllers
             ViewBag.Date = method.RecipeDate(DateTime.Now, model.CreatedDate);
             return View(model);
         }
-
+        public IActionResult HomePage()
+        {
+            IEnumerable<Category> categories = _context.Categories.ToList();
+            return View(categories);
+        }
     }
 }

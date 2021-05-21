@@ -47,10 +47,10 @@ namespace CrudApp
             {
                 var supportedCultures = new List<CultureInfo>
                 {
-                    new CultureInfo("az"),
-                    new CultureInfo("en")            
+                    new CultureInfo("az-Latn-AZ"),
+                    new CultureInfo("en-US")            
                 };
-                op.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("az");
+                op.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("az-Latn-AZ");
                 op.SupportedCultures = supportedCultures;
                 op.SupportedUICultures = supportedCultures;
             });

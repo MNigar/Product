@@ -162,18 +162,16 @@
                 <nav class="navbar">
 
                     <ul class="navbar-nav">
-                        <li class="menu-item"> <a href="team.html">Team</a> </li>
+                        <li class="menu-item"> <a href="team.html"></a> </li>
 
-                        <li class="menu-item"> <a href="contact-us.html">Contact Us</a> </li>
+                        <li class="menu-item"> <a href="contact-us.html"></a> </li>
                     </ul>
 
-                    <!-- Logo -->
-                    <a class="navbar-brand" href="index.html"> <img src="~/Upload/@ViewData["Logo"]" alt="logo"> </a>
-
+                    <!-- Logo 
                     <!-- Call to Action -->
                     <div class="metro_header-controls">
 
-                        <a href="/Product/Create" class="metro_btn-custom">Submit Recipe</a>
+                        <a href="/Product/Create" class="metro_btn-custom">Submit Book</a>
 
                         <div class="aside-toggler aside-trigger-left">
                             <span></span>
@@ -189,7 +187,9 @@
 
 
                     </div>
-
+                    <div>
+                        <partial name="LanguagePar" />
+                    </div>
                 </nav>
             </div>
         </div>
@@ -219,40 +219,23 @@
 
 
                         <li class="menu-item menu-item-has-children mega-menu-wrapper">
-                            <a href="#">Recipes</a>
+                            <a href="#">Books</a>
                             <ul class="sub-menu">
                                 <li>
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-lg-4">
                                                 <div class="mega-menu-item">
-                                                    <h6>Recipe Pages</h6>
-                                                    <a href="/Product/BookGrid">All Recipes</a>
+                                                    <h6>Book Pages</h6>
+                                                    <a href="/Product/BookGrid">All  Books</a>
 
-                                                    <a href="/Category/RecipeCategory">Recipe Categories</a>
+                                                    <a href="/Category/CategoryGrid">Book Janrs</a>
 
 
                                                 </div>
                                             </div>
                                            
-                                            <div class="col-lg-4">
-                                                <div class="mega-menu-item">
-                                                    <a href="recipe-grid.html" class="metro_recipe-category">
-                                                        <div class="metro_recipe-category-thumb">
-                                                            <img src="~/Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img/categories/3.jpg" alt="Recipe Category">
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="mega-menu-item">
-                                                    <a href="recipe-grid.html" class="metro_recipe-category">
-                                                        <div class="metro_recipe-category-thumb">
-                                                            <img src="~/Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img/blog/2.jpg" alt="Recipe Category">
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                     </div>
 
@@ -285,13 +268,7 @@
         <span class="metro_footer-watermark">Restaurant</span>
 
         <!-- Top Footer -->
-        <div class="container">
-            <div class="metro_footer-top">
-                <div class="metro_footer-logo">
-                    <a class="navbar-brand" href="index.html"> <img src="~/Upload/@ViewData["Logo"]" alt="logo"> </a>
-                </div>
-            </div>
-        </div>
+        
 
         <!-- Middle Footer -->
         <div class="metro_footer-middle">

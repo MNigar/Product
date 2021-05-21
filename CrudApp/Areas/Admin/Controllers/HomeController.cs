@@ -1,6 +1,7 @@
 ﻿using CrudApp.Db;
 using CrudApp.Db.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -25,6 +26,7 @@ namespace CrudApp.Areas.Admin.Controllers
             _context = context;
            
         }
+   
         public IActionResult Index()
         {
             return View();

@@ -482,10 +482,10 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Resource\SharedResource.az.resx">
-      <Generator></Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resource\SharedResource.en.resx">
-      <Generator></Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
 

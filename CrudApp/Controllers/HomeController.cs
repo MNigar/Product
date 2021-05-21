@@ -80,22 +80,14 @@ namespace CrudApp.Controllers
 
             var check = _context.Users.Where(u => u.Email == user.Email).FirstOrDefault();
             if (check != null)
-            {
-
-
-               
+            {              
 
                 if (Crypto.VerifyHashedPassword(check.Password, user.Password))
                 {
                     HttpContext.Session.SetString(SessionEmail, check.Email);
                     HttpContext.Session.SetString(SessionId, check.Id.ToString());
                     HttpContext.Session.SetString(SessionName, check.Name.ToString());
-                    //if (Session["username"].ToString() == "admin")
-                    //{
-                    //    return View("~/Areas/Manage/Views/Home/Index.cshtml");
-                    //}
-                    //else
-                    //{
+                   
                     return RedirectToAction("Home", "Index");
                     //}
 
