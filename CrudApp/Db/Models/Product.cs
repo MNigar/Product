@@ -19,6 +19,7 @@ namespace CrudApp.Db.Models
         public DateTime? UpdatedDate { get; set; }
         public Guid? ModifyUserId { get; set; }
         public string Description { get; set; }
+        public string PublishingHouse { get; set; }
         public Guid? UserId { get; set; }
         public virtual User User { get; set; }
     }
