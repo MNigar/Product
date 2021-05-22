@@ -136,3 +136,5 @@ D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\LanguagePar1.
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\CategoryList.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Search.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Subheader.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\SubHeaders.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\EditLogo.cshtml.g.cs

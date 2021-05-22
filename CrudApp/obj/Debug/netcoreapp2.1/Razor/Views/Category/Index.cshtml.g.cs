@@ -71,7 +71,7 @@ using CrudApp.Resource;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(120, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3c13e8c8ff74ea2b70b8ebfdb313e0d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "15603d8a424246e1a9f2862e52c7b2cb", async() => {
                 BeginContext(143, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -141,7 +141,7 @@ using CrudApp.Resource;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(746, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b50dcb55aa1949ba9f7714bf867b91ee", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5851b18b273e4a76be781cb9e6963080", async() => {
                 BeginContext(791, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -176,7 +176,7 @@ using CrudApp.Resource;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(819, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ecfcb59e5a05426cb09163c0b34df174", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "44cd7832291d46da911b4a56e1c1d591", async() => {
                 BeginContext(867, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -211,7 +211,7 @@ using CrudApp.Resource;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(898, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "822f7ed9962943ea9fdd1f5435d8ef0d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75fb9abbcbfa4fe687b375558d84c570", async() => {
                 BeginContext(945, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

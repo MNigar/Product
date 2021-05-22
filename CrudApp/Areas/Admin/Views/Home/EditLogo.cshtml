@@ -1,32 +1,27 @@
-﻿@model CrudApp.Db.Models.Category
+﻿@model CrudApp.Db.Models.SubHeader
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>@stringLocalizer["Edit"]</h2>
 
-<h4>@stringLocalizer["Genre"]</h4>
+<h4>@stringLocalizer["SubHeader"]</h4>
 <hr />
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <form asp-action="Edit" enctype="multipart/form-data">
+            <form asp-action="EditLogo" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                   
-                    <label class="control-label"> @stringLocalizer["Name"] </label> 
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
+
                 <div class="form-group">
                     <label class="control-label"> @stringLocalizer["Image"] </label>
                     <input asp-for="Image" class="form-control" type="file" />
                     <span asp-validation-for="Image" class="text-danger"></span>
 
                 </div>
-                <img src="~/Image/@Model.Image" style="height: 200px; width:200px; object-fit: cover" asp-append-version="true" />
+                <img src="~/Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img/@Model.Image" style="height: 100px; width:100px; object-fit: cover">
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-default" />
                 </div>
@@ -35,7 +30,7 @@
     </div>
 
     <div>
-        <a asp-action="Index">@stringLocalizer["Back to List"]</a>
+        <a asp-action="SubHeaders">@stringLocalizer["Back to List"]</a>
     </div>
 </div>
 

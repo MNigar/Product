@@ -132,6 +132,9 @@
   <data name="Author" xml:space="preserve">
     <value>Müəllif</value>
   </data>
+  <data name="Back to List" xml:space="preserve">
+    <value>Siyahıya keçid edin</value>
+  </data>
   <data name="Book Janrs" xml:space="preserve">
     <value> Janrlar</value>
   </data>
@@ -189,6 +192,9 @@
   <data name="Index" xml:space="preserve">
     <value>Siyahı</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Daxil ol</value>
+  </data>
   <data name="ModifyUser" xml:space="preserve">
     <value>Dəyişiklik edən Şəxs</value>
   </data>
@@ -215,6 +221,9 @@
   </data>
   <data name="Recent Posts" xml:space="preserve">
     <value>Son postlar</value>
+  </data>
+  <data name="SubHeader" xml:space="preserve">
+    <value>Başlıq</value>
   </data>
   <data name="Surname" xml:space="preserve">
     <value>Soyad</value>

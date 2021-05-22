@@ -17,27 +17,27 @@ namespace CrudApp.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
-         string SessionName = "Name";
-         string SessionEmail = "Email";
-         string SessionId = "Id";
-         string LoginError = "LoginError";
+        string SessionName = "Name";
+        string SessionEmail = "Email";
+        string SessionId = "Id";
+        string LoginError = "LoginError";
 
         private readonly ProductContext _context;
         private readonly IHostingEnvironment _environment;
 
-        public HomeController(ProductContext context,IHostingEnvironment environment)
+        public HomeController(ProductContext context, IHostingEnvironment environment)
         {
             _context = context;
             _environment = environment;
         }
-   
+
         public IActionResult Index()
         {
             return View();
         }
         public IActionResult Top()
         {
-          var users=  _context.Users.Include("Products").Where(x => x.Products.Count>1);
+            var users = _context.Users.Include("Products").Where(x => x.Products.Count > 1);
 
             return View(users);
         }
@@ -109,13 +109,61 @@ namespace CrudApp.Areas.Admin.Controllers
                     FileStream fileStream = new FileStream(path, FileMode.CreateNew);
                     await image.CopyToAsync(fileStream);
                     model.Image = fileName;
-                    
+
                     await _context.SubHeaders.AddAsync(model);
                     await _context.SaveChangesAsync();
                 }
             }
-            return RedirectToAction("Index","Product");
+            return RedirectToAction("Index", "Product");
 
+        }
+        [HttpGet]
+        public IActionResult EditLogo(int id)
+        {
+            var model = _context.SubHeaders.Where(x => x.Id == id).FirstOrDefault();
+
+
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditLogo(SubHeader model, IFormFile image)
+        {
+            SubHeader current = _context.SubHeaders.AsNoTracking().FirstOrDefault(x => x.Id == model.Id);
+            var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                if (image != null)
+                {
+                    string fileName = $"_{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
+                    string path = Path.Combine(_environment.WebRootPath, "Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img", fileName);
+                    FileStream fileStream = new FileStream(path, FileMode.CreateNew);
+                    await image.CopyToAsync(fileStream);
+                    model.Image = fileName;
+                    _context.Entry(current).State = EntityState.Detached;
+                }
+
+                if (image == null)
+                {
+
+                    model.Image = current.Image;
+                }
+
+                var entity = _context.Entry(model);
+                _context.Entry(model).State = EntityState.Modified;
+
+                await _context.SaveChangesAsync();
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+            }
+            return RedirectToAction("SubHeaders");
+        }
+        public IActionResult SubHeaders()
+        {
+            IEnumerable<SubHeader> model = _context.SubHeaders.ToList();
+            return View(model);
         }
     }
 }
