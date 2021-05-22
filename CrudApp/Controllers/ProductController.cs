@@ -29,7 +29,7 @@ namespace CrudApp.Controllers
         public IActionResult Index()
         {
 
-            IEnumerable<Product> products = _context.Products.Include("User").Where(x=>x.UserId.ToString()== HttpContext.Session.GetString("Id")).ToList();
+            IEnumerable<Product> products = _context.Products.Include("User").Where(x => x.UserId.ToString() == HttpContext.Session.GetString("Id")).ToList();
             return View(products);
         }
         public IActionResult CultureManagemenet(string culture, string returnUrl)
@@ -43,7 +43,7 @@ namespace CrudApp.Controllers
         [HttpGet]
         public IActionResult Views()
         {
-            
+
             return View();
         }
         [HttpGet]
@@ -55,34 +55,38 @@ namespace CrudApp.Controllers
                 return RedirectToAction("Login", "Home");
             }
             IEnumerable<Category> category = _context.Categories.ToList();
-            ViewBag.CategoryId = new SelectList(_context.Categories.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active), "Id", "Name"); 
+            ViewBag.CategoryId = new SelectList(_context.Categories.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active), "Id", "Name");
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Product model,IFormFile image)
+        public async Task<IActionResult> Create(Product model, IFormFile image)
         {
+            var transaction = _context.Database.BeginTransaction();
+            try
+            {
+                model.Id = Guid.NewGuid();
 
-            model.Id = Guid.NewGuid();
-
-            if (Utils.Check.CheckFormat(image.ContentType))
+                if (Utils.Check.CheckFormat(image.ContentType))
                 {
                     string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
 
                     string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
                     FileStream fileStream = new FileStream(path, FileMode.CreateNew);
                     await image.CopyToAsync(fileStream);
-                    var newModel = method.Create(model);
-                    model.Image = fileName;
-                    model.UserId = new Guid(HttpContext.Session.GetString("Id"));
-                    model.CreatedDate = DateTime.Now;
-                    model.Status = (int)Utils.Enums.Status.NewCreated;
-                    await _context.Products.AddAsync(model);
+                    var newModel = method.Create(model, new Guid(HttpContext.Session.GetString("Id")), fileName);
+                    await _context.Products.AddAsync(newModel);
                     await _context.SaveChangesAsync();
+                    transaction.Commit();
                     Utils.Email.SendEmail(HttpContext.Session.GetString("Email"), HttpContext.Session.GetString("Name"), "Kitab admin terefinden qiymetlendirirlecek", model.Name);
                 }
-                    return RedirectToAction("Index");               
-            
-           
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+            }
+            return RedirectToAction("Index");
+
+
         }
         [HttpGet]
         public IActionResult New()
@@ -93,55 +97,61 @@ namespace CrudApp.Controllers
         public IActionResult Edit(Guid id)
         {
             var request = HttpContext.Request;
-            var model = _context.Products.Where(x => x.Id == id ).FirstOrDefault();
+            var model = _context.Products.Where(x => x.Id == id).FirstOrDefault();
             ViewBag.CategoryId = new SelectList(_context.Categories.ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active), "Id", "Name");
 
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(Guid id,Product model, IFormFile image)
+        public async Task<IActionResult> Edit(Guid id, Product model, IFormFile image)
         {
-            Product currentProduct = _context.Products.AsNoTracking().FirstOrDefault(x=>x.Id==model.Id);
+            Product currentProduct = _context.Products.AsNoTracking().FirstOrDefault(x => x.Id == model.Id);
 
-            if (image != null)
+            var transaction = _context.Database.BeginTransaction();
+            try
             {
-                string fileName = $"_{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
-                string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
-                FileStream fileStream = new FileStream(path, FileMode.CreateNew);
-                await image.CopyToAsync(fileStream);
-                model.Image = fileName;
-               
-                
-                Utils.Email.SendEmail(HttpContext.Session.GetString("Email"), HttpContext.Session.GetString("Name"), "Kitab admin terefinden qiymetlendirirlecek", model.Name);
-                _context.Entry(currentProduct).State = EntityState.Detached;
-            }
+                if (image != null)
+                {
+                    string fileName = $"_{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
+                    string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
+                    FileStream fileStream = new FileStream(path, FileMode.CreateNew);
+                    await image.CopyToAsync(fileStream);
+                    model.Image = fileName;
 
-            if (image == null)
+                    Utils.Email.SendEmail(HttpContext.Session.GetString("Email"), HttpContext.Session.GetString("Name"), "Kitab admin terefinden qiymetlendirirlecek", model.Name);
+                    _context.Entry(currentProduct).State = EntityState.Detached;
+                }
+
+                if (image == null)
+                {
+                    model.Image = currentProduct.Image;
+                }
+                var newModel = method.Edit(model, currentProduct, new Guid(HttpContext.Session.GetString("Id")), model.Image);
+
+                var entity = _context.Entry(newModel);
+
+                _context.Entry(newModel).State = EntityState.Modified;
+
+                await _context.SaveChangesAsync();
+                transaction.Commit();
+            }
+            catch (Exception ex)
             {
-                model.Image = currentProduct.Image;
+                transaction.Rollback();
             }
-            model.UpdatedDate = DateTime.Now;
-            model.CreatedDate = currentProduct.CreatedDate;
-            model.ModifyUserId = new Guid(HttpContext.Session.GetString("Id"));
-            model.Status = (int)Utils.Enums.Status.Waiting;
-            model.UserId = currentProduct.UserId;
-            var entity = _context.Entry(model);
-            _context.Entry(model).State = EntityState.Modified;
-
-            await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
-       
+
 
         public IActionResult BookGrid(Guid? id)
         {
-            IEnumerable<Product> book = _context.Products.Include("Category").ToList().Where(x=>x.Status==(int)Utils.Enums.Status.Active);
+            IEnumerable<Product> book = _context.Products.Include("Category").ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active);
             ViewBag.Category = _context.Categories.Where(x => x.Status == (int)Enums.Status.Active).ToList().Distinct();
 
             if (id != null)
             {
-                IEnumerable<Product> bookList = _context.Products.Include("Category").ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active && x.CategoryId==id);
+                IEnumerable<Product> bookList = _context.Products.Include("Category").ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active && x.CategoryId == id);
 
                 return View(bookList);
             }
@@ -184,9 +194,9 @@ namespace CrudApp.Controllers
             }
             if (!String.IsNullOrEmpty(categoryId))
             {
-                result = result.Where(x => x.CategoryId.ToString() ==categoryId);
+                result = result.Where(x => x.CategoryId.ToString() == categoryId);
             }
-   
+
             ViewBag.Category = _context.Categories.Where(x => x.Status == (int)Enums.Status.Active).ToList().Distinct();
             ViewData["image"] = _context.SubHeaders.LastOrDefault().Image;
 

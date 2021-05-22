@@ -65,7 +65,7 @@ using CrudApp.Resource;
             WriteLiteral("<html>\r\n");
             EndContext();
             BeginContext(67, 6492, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "520776e503794787b6762d4cc0156974", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ade372dabc44b3e839c3f891c80cd26", async() => {
                 BeginContext(73, 118, true);
                 WriteLiteral("\r\n\r\n\r\n    <!-- Header End -->\r\n    <!-- Banner Start -->\r\n    <div class=\"metro_subheader dark-overlay dark-overlay-2\"");
                 EndContext();
@@ -130,7 +130,7 @@ WriteAttributeValue("", 1436, i.Id, 1436, 5, false);
                 WriteLiteral(" class=\"metro_recipe-category style-2\">\r\n                            ");
                 EndContext();
                 BeginContext(1511, 97, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "10fe6ab91f524a08882e4037f8baaccb", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "92e28214f2f64c82b3ee048435d1fd10", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -244,7 +244,7 @@ WriteAttributeValue("", 3104, rec.Id, 3104, 7, false);
                 WriteLiteral("                                                ");
                 EndContext();
                 BeginContext(3260, 84, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "9347525a47f24c9280b43e1f9a12ecb0", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "bb56728e1ef74fbca79339f08d26c14e", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -361,7 +361,7 @@ WriteAttributeValue("", 5435, rec.Id, 5435, 7, false);
                 WriteLiteral(">");
                 EndContext();
                 BeginContext(5444, 41, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "0257ce03f63648189695e3f0fd104497", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ccb69d69308b4ade8fef1d38a87cee38", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

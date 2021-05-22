@@ -29,12 +29,42 @@ namespace CrudApp.Utils
             }
             return ViewBag.Date;
         }
-        public  Product Create(Product model)
+        public  Product Edit(Product model, Product current, Guid UpdatedUserId,string filename)
         {
             Product newProduct = new Product();
-            newProduct.CreatedDate = DateTime.Now;
+            newProduct.Status = (int)Utils.Enums.Status.Waiting;
+            
+            newProduct.Name = model.Name;
+            newProduct.Author = model.Author;
+            newProduct.CategoryId = model.CategoryId;
+            newProduct.UpdatedDate = DateTime.Now;
+            newProduct.UserId = current.UserId;
+            newProduct.ModifyUserId = UpdatedUserId;
+            newProduct.Image = filename;
+            newProduct.PageCount = model.PageCount;
+            newProduct.PublishingHouse = model.PublishingHouse;
+            newProduct.Description = model.Description;
+            newProduct.CreatedDate = current.CreatedDate;
+            newProduct.Id = current.Id;
+            return newProduct;
+
+        }
+        public Product Create(Product model, Guid createdUserId, string filename)
+        {
+            Product newProduct = new Product();
             newProduct.Status = (int)Utils.Enums.Status.NewCreated;
-            newProduct.Id = Guid.NewGuid();
+
+            newProduct.Name = model.Name;
+            newProduct.Author = model.Author;
+            newProduct.CategoryId = model.CategoryId;
+            newProduct.UpdatedDate = null;
+            newProduct.UserId = createdUserId;
+            newProduct.ModifyUserId = null;
+            newProduct.Image = filename;
+            newProduct.PageCount = model.PageCount;
+            newProduct.PublishingHouse = model.PublishingHouse;
+            newProduct.Description = model.Description;
+            newProduct.CreatedDate = DateTime.Now;
             return newProduct;
 
         }

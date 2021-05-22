@@ -171,6 +171,9 @@
   <data name="Edit" xml:space="preserve">
     <value>Düzəliş et</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="Genre" xml:space="preserve">
     <value>Janr</value>
   </data>
@@ -194,6 +197,9 @@
   </data>
   <data name="PageCount" xml:space="preserve">
     <value>Səhifə sayı</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Şifrə</value>
   </data>
   <data name="Popular Books" xml:space="preserve">
     <value>Məşhur Kitablar</value>

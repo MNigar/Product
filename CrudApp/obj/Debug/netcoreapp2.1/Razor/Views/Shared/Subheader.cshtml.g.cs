@@ -59,7 +59,7 @@ using CrudApp.Resource;
             WriteLiteral("\r\n \r\n\r\n<a class=\"navbar-brand\" href=\"index.html\"> ");
             EndContext();
             BeginContext(170, 50, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1c1c3bca409a41b8a579476cd2ba84a5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "141ffda3fef84c44b6bc8982f173313e", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

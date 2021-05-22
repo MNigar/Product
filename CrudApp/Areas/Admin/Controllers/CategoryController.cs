@@ -85,28 +85,36 @@ namespace CrudApp.Areas.Admin.Controllers
         public async Task<IActionResult> Edit( Category model, IFormFile image)
         {       
             Category currentCategory = _context.Categories.AsNoTracking().FirstOrDefault(x => x.Id == model.Id);
-
-            if (image != null)
+            var transaction = _context.Database.BeginTransaction();
+            try
             {
-                string fileName = $"_{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
-                string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
-                FileStream fileStream = new FileStream(path, FileMode.CreateNew);
-                await image.CopyToAsync(fileStream);
-                model.Image = fileName;
-                _context.Entry(currentCategory).State = EntityState.Detached;
-            }
+                if (image != null)
+                {
+                    string fileName = $"_{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
+                    string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
+                    FileStream fileStream = new FileStream(path, FileMode.CreateNew);
+                    await image.CopyToAsync(fileStream);
+                    model.Image = fileName;
+                    _context.Entry(currentCategory).State = EntityState.Detached;
+                }
 
-            if (image == null)
+                if (image == null)
+                {
+
+                    model.Image = currentCategory.Image;
+                }
+
+                model.Status = (int)Utils.Enums.Status.Active;
+                var entity = _context.Entry(model);
+                _context.Entry(model).State = EntityState.Modified;
+
+                await _context.SaveChangesAsync();
+                transaction.Commit();
+            }
+            catch (Exception ex)
             {
-
-                model.Image = currentCategory.Image;
+                transaction.Rollback();
             }
-
-            model.Status = (int)Utils.Enums.Status.Active;
-            var entity = _context.Entry(model);
-            _context.Entry(model).State = EntityState.Modified;
-
-            await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
       
