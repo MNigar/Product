@@ -94,7 +94,7 @@ namespace CrudApp
              {
                  routes.MapRoute(
                name: "areas",
-               template: "{area:exists}/{controller=Product}/{action=Index}/{id?}");
+               template: "{area:exists}/{controller=Home}/{action=Login}/{id?}");
 
                  routes.MapRoute(
                      name: "default",
