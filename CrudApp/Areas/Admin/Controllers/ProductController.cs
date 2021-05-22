@@ -35,9 +35,9 @@ namespace CrudApp.Areas.Admin.Controllers
             _context.Entry(model).State = EntityState.Modified;
 
             await _context.SaveChangesAsync();
-            return View(model);
+            return RedirectToAction("Index", "Product");
         }
-        
+
         //public async Task<IActionResult> Cancel(Guid id,string message)
         //{
         //    var model = _context.Products.Where(x => x.Id == id).FirstOrDefault();

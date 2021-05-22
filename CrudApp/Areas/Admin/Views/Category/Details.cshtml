@@ -8,7 +8,7 @@
 
 <div>
     <div class="container">
-        <h4>Create Category</h4>
+        <h4>@stringLocalizer["Create"]</h4>
         <hr />
         <div class="row">
             <div class="col-md-8">
@@ -25,16 +25,13 @@
                     <dd>
                         <img src="~/Image/@Model.Image" alt="post" height="300" width="300">
                     </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.Status)
-                    </dt>
-                    
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+
                 </dl>
             </div>
-            <div>
-                <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-                <a asp-action="Index">Back to List</a>
-            </div>
+           
         </div>
     </div>
 </div>

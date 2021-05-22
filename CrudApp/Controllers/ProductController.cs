@@ -49,7 +49,7 @@ namespace CrudApp.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            if (HttpContext.Session.GetString("Id") == null)
+            if (HttpContext.Session.GetString("Id") == null || HttpContext.Session.GetString("Id") == "")
             {
                 TempData["Message"] = "Please login for adding book";
                 return RedirectToAction("Login", "Home");
@@ -63,26 +63,24 @@ namespace CrudApp.Controllers
         {
 
             model.Id = Guid.NewGuid();
-            
-            
-          
-                if (Utils.Check.CheckFormat(image.ContentType))
+
+            if (Utils.Check.CheckFormat(image.ContentType))
                 {
                     string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
 
                     string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
                     FileStream fileStream = new FileStream(path, FileMode.CreateNew);
                     await image.CopyToAsync(fileStream);
+                    var newModel = method.Create(model);
                     model.Image = fileName;
+                    model.UserId = new Guid(HttpContext.Session.GetString("Id"));
                     model.CreatedDate = DateTime.Now;
-                    model.Status = (int) Utils.Enums.Status.Waiting;
-                    model.UserId =new Guid(HttpContext.Session.GetString("Id"));
+                    model.Status = (int)Utils.Enums.Status.NewCreated;
                     await _context.Products.AddAsync(model);
                     await _context.SaveChangesAsync();
                     Utils.Email.SendEmail(HttpContext.Session.GetString("Email"), HttpContext.Session.GetString("Name"), "Kitab admin terefinden qiymetlendirirlecek", model.Name);
                 }
-                    return RedirectToAction("Index");
-                
+                    return RedirectToAction("Index");               
             
            
         }
@@ -112,9 +110,7 @@ namespace CrudApp.Controllers
                 FileStream fileStream = new FileStream(path, FileMode.CreateNew);
                 await image.CopyToAsync(fileStream);
                 model.Image = fileName;
-                model.UpdatedDate = DateTime.Now;
-                model.CreatedDate = currentProduct.CreatedDate;
-                model.ModifyUserId = new Guid(HttpContext.Session.GetString("Id"));
+               
                 
                 Utils.Email.SendEmail(HttpContext.Session.GetString("Email"), HttpContext.Session.GetString("Name"), "Kitab admin terefinden qiymetlendirirlecek", model.Name);
                 _context.Entry(currentProduct).State = EntityState.Detached;
@@ -124,8 +120,11 @@ namespace CrudApp.Controllers
             {
                 model.Image = currentProduct.Image;
             }
-
-            model.Status = (int)Utils.Enums.Status.Waiting;              
+            model.UpdatedDate = DateTime.Now;
+            model.CreatedDate = currentProduct.CreatedDate;
+            model.ModifyUserId = new Guid(HttpContext.Session.GetString("Id"));
+            model.Status = (int)Utils.Enums.Status.Waiting;
+            model.UserId = currentProduct.UserId;
             var entity = _context.Entry(model);
             _context.Entry(model).State = EntityState.Modified;
 
@@ -172,7 +171,7 @@ namespace CrudApp.Controllers
         [HttpGet]
         public ActionResult Search(string Name, string categoryId, string Author)
         {
-            IEnumerable<Product> result = _context.Products.Include("Category").ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active);
+            IEnumerable<Product> result = _context.Products.Include("Category").Include("User").ToList().Where(x => x.Status == (int)Utils.Enums.Status.Active);
 
             if (!String.IsNullOrEmpty(Name))
             {
@@ -181,7 +180,7 @@ namespace CrudApp.Controllers
 
             if (!String.IsNullOrEmpty(Author))
             {
-                result = result.Where(x => x.User.Name.ToLower().Contains(Author.ToLower()));
+                result = result.Where(x => x.Author.ToLower().Contains(Author.ToLower()));
             }
             if (!String.IsNullOrEmpty(categoryId))
             {

@@ -14,9 +14,9 @@ namespace CrudApp.Controllers
     {
         const string RegistrationError = "RegistrationError";
 
-        const string SessionName = "Name";
-        const string SessionEmail = "Email";
-        const string SessionId = "Id";
+         string SessionName = "Name";
+         string SessionEmail = "Email";
+         string SessionId = "Id";
         private readonly ProductContext _context;
         public HomeController(ProductContext context)
         {
@@ -31,7 +31,7 @@ namespace CrudApp.Controllers
 
         public IActionResult Profiles()
         {
-            if (HttpContext.Session.GetString("Id") == null)
+            if (HttpContext.Session.GetString("Id") == null || HttpContext.Session.GetString("Id") == "")
             {
                 TempData["Message"] = "Please login ";
                 return RedirectToAction("Login", "Home");
@@ -117,9 +117,12 @@ namespace CrudApp.Controllers
         [HttpGet]
         public IActionResult Logout()
         {
-            HttpContext.Session.SetString(SessionEmail, null);
-            HttpContext.Session.SetString(SessionId, null);
-            HttpContext.Session.SetString(SessionName, null);
+           
+
+            HttpContext.Session.SetString("Email","");
+            HttpContext.Session.SetString(SessionId, "");
+            HttpContext.Session.SetString(SessionName, "");
+
             return RedirectToAction("Login");
         }
         

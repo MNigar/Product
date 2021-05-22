@@ -17,10 +17,10 @@ namespace CrudApp.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
-        const string SessionName = "Name";
-        const string SessionEmail = "Email";
-        const string SessionId = "Id";
-        const string LoginError = "LoginError";
+         string SessionName = "Name";
+         string SessionEmail = "Email";
+         string SessionId = "Id";
+         string LoginError = "LoginError";
 
         private readonly ProductContext _context;
         private readonly IHostingEnvironment _environment;
@@ -81,6 +81,18 @@ namespace CrudApp.Areas.Admin.Controllers
             return View();
         }
         [HttpGet]
+        public IActionResult Logout()
+        {
+
+
+            HttpContext.Session.SetString(SessionEmail, null);
+            HttpContext.Session.SetString(SessionId, String.Empty);
+            HttpContext.Session.SetString(SessionName, String.Empty);
+            var email = HttpContext.Session.GetString(SessionEmail);
+
+            return RedirectToAction("Login");
+        }
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -102,7 +114,7 @@ namespace CrudApp.Areas.Admin.Controllers
                     await _context.SaveChangesAsync();
                 }
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Product");
 
         }
     }

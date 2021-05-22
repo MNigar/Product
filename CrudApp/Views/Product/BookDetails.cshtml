@@ -9,7 +9,7 @@
     <div class="metro_subheader dark-overlay dark-overlay-2" style="background-image: url(/Public/metropolitanhost.com/themes/themeforest/html/trickly/assets/img/@ViewData["image"])">
         <div class="container">
             <div class="metro_subheader-inner">
-                <h1>Book Details</h1>
+                <h1>@stringLocalizer["Details"] </h1>
                 
             </div>
         </div>
@@ -61,7 +61,7 @@
                                             <li>  <i class="fas fa-user-edit">@stringLocalizer["Author"]:</i> @Model.Author </li>
                                             <li>  <i class="fas fa-book">@stringLocalizer["Page Count"]:</i> @Model.PageCount </li>
                                             <li>  <i class="fas fa-book">@stringLocalizer["PublishingHouse"]:</i> @Model.PublishingHouse </li>
-                                            <li>  <i class="fas fa-book">@stringLocalizer["Category"]:</i> @Model.Category.Name </li>
+                                            <li>  <i class="fas fa-book">@stringLocalizer["Genre"]:</i> @Model.Category.Name </li>
                                         </ul>
                                     </div>
                                 </div>

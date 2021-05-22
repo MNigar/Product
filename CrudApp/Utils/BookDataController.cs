@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CrudApp.Db.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,15 @@ namespace CrudApp.Utils
                 ViewData["Date"] = date.TotalDays.ToString().Split('.')[0] + "days";
             }
             return ViewBag.Date;
+        }
+        public  Product Create(Product model)
+        {
+            Product newProduct = new Product();
+            newProduct.CreatedDate = DateTime.Now;
+            newProduct.Status = (int)Utils.Enums.Status.NewCreated;
+            newProduct.Id = Guid.NewGuid();
+            return newProduct;
+
         }
     }
 }

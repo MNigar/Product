@@ -44,20 +44,31 @@ namespace CrudApp.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Category model,IFormFile image)
         {
-            if (ModelState.IsValid)
+            var transaction = _context.Database.BeginTransaction();
+            try
             {
-                if (Utils.Check.CheckFormat(image.ContentType))
+
+                if (ModelState.IsValid)
                 {
-                    string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
-                    string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
-                    FileStream fileStream = new FileStream(path, FileMode.CreateNew);
-                    await image.CopyToAsync(fileStream);
-                    model.Image = fileName;
-                    model.Id = Guid.NewGuid();
-                    model.Status = (int)Utils.Enums.Status.Active;
-                    await _context.Categories.AddAsync(model);
-                    await _context.SaveChangesAsync();
+                    if (Utils.Check.CheckFormat(image.ContentType))
+                    {
+                        string fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
+                        string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
+                        FileStream fileStream = new FileStream(path, FileMode.CreateNew);
+                        await image.CopyToAsync(fileStream);
+                        model.Image = fileName;
+                        model.Id = Guid.NewGuid();
+                        model.Status = (int)Utils.Enums.Status.Active;
+                        await _context.Categories.AddAsync(model);
+                        await _context.SaveChangesAsync();
+                        transaction.Commit();
+                    }
                 }
+                
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
             }
             return RedirectToAction("Index");
 

@@ -91,8 +91,6 @@ D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Create.cshtml.g.c
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Edit.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Index.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\LanguagePar.cshtml.g.cs
-D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout1.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout2.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
@@ -124,7 +122,6 @@ D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Product\Index
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\CategoryGrid.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Home\Registration.cshtml.g.cs
-D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\LanguagePar.cshtml.g.cs
 D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\HomePage.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\HomePage.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\CategoryList.cshtml.g.cs
@@ -133,3 +130,9 @@ D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Produc
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Create.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Subheader.cshtml.g.cs
 D:\COVID1904\.NETCORE\Product\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Top.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Create.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Home\Top.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\LanguagePar1.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Category\CategoryList.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Product\Search.cshtml.g.cs
+D:\CrudApp\CrudApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Subheader.cshtml.g.cs

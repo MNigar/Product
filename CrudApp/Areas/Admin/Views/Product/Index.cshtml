@@ -6,8 +6,16 @@
 
 <h2>@stringLocalizer["Books"]</h2>
 <p>
-    <a asp-action="Create">Create New</a>
 </p>
+<style>
+    td {
+        text-align: center;
+    }
+    th {
+        text-align: center;
+    }
+
+</style>
 <div>
     <div class="col-2"> </div>
     <div class="col-2">
@@ -22,17 +30,17 @@
     </div>
     <div class="col-2">
         <div class="row">
-            New: <div style="width: 20px;
+            New: <div style="        width: 20px;
         height: 20px;
         border: 1px solid black;
-        background-color: #efa115">
+        background-color: #ffd800">
             </div>
         </div>
 
     </div>
     <div class="col-2">
         <div class="row">
-            Updated: <div style="width:20px;height:20px;border:1px solid black; background-color :#ffd800"></div>
+            Updated: <div style="width:20px;height:20px;border:1px solid black; background-color : aqua"></div>
         </div>
     </div>
     <br />
@@ -44,22 +52,26 @@
                 <label>No</label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @stringLocalizer["name"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author)
+                @stringLocalizer["Author"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Category)
+                @stringLocalizer["Category"]
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PageCount)
+                @stringLocalizer["PageCount"]
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Image)
+                @stringLocalizer["Image"]
+
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreatedDate)
+                @stringLocalizer["CreatedDate"]
+
             </th>
           
 
@@ -106,9 +118,8 @@
 
 
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                  
                     </td>
                 </tr>
             }
@@ -145,9 +156,7 @@
 
 
         <td>
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
         </td>
     </tr>
 
@@ -184,16 +193,14 @@
 
 
         <td>
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
         </td>
     </tr>
             }
 
             if (item.Status == 2)
             {
-    <tr style="background-color: #ffd800 ">
+    <tr style="background-color: aqua ">
         @{num = num + 1;
         }
 
@@ -223,9 +230,7 @@
 
 
         <td>
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
         </td>
     </tr>
             }

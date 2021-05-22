@@ -4,12 +4,21 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>@stringLocalizer["Categories"]</h2>
+<h2>@stringLocalizer["Genres"]</h2>
+<style>
+    td {
+        text-align: center;
+    }
+
+    th {
+        text-align: center;
+    }
+</style>
 <div class="container">
     <hr />
     <p>
 
-        <a asp-action="Create">@stringLocalizer["CreateNew"]</a>
+        <a asp-action="Create">@stringLocalizer["Create"]</a>
 
     </p>
     <table class="table table-bordered">

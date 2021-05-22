@@ -9,7 +9,7 @@
 <h2>@stringLocalizer["Books"]</h2>
 
 <p>
-    <a asp-action="Create">@stringLocalizer["CreateNew"]</a>
+    <a href="Home/Logout">Logout</a>
 </p>
 <table class="table">
     <thead>
@@ -45,7 +45,7 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">@stringLocalizer["Edit"]</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="BookDetails" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
