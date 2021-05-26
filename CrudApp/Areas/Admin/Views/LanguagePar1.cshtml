@@ -1,7 +1,4 @@
-﻿
-
-
-@using System.Threading.Tasks
+﻿@using System.Threading.Tasks
 @using Microsoft.AspNetCore.Builder
 @using Microsoft.AspNetCore.Localization
 @using Microsoft.AspNetCore.Mvc.Localization
@@ -15,13 +12,65 @@
     var cultureItems = LocOptions.Value.SupportedUICultures
         .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
         .ToList();
+
+    List<LanguageImage> list = new List<LanguageImage>();
+    list.Add(new LanguageImage()
+    {
+        Image = "azerbaijan.png",
+        Language = "Azerbaijan"
+    });
+    list.Add(new LanguageImage()
+    {
+        Image = "united-kingdom.png",
+        Language = "English"
+    });
+
+
+    ViewBag.image = list;
 }
+
 
 <div title="@Localizer["Request culture provider:"] @requestCulture?.Provider?.GetType().Name">
     <form asp-action="CultureManagemenet" asp-controller="/Category" asp-route-returnUrl="@Context.Request.Path"
           method="post" class="form-horizontal" role="form">
-        @Localizer["Language:"] <select name="culture"
-                                        asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems" onchange="this.form.submit();"></select>
 
+        @*@Localizer["Language:"] <select name="culture"
+            asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems" onchange="this.form.submit();"></select>*@
+
+        @*<select name="culture"
+                            asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems" onchange="this.form.submit();">
+                        @foreach (var i in cultureItems)
+                        {
+
+                        <option value="@i.Value" data-img_src="https://data.world/api/datadotworld-apps/dataset/python/file/raw/logo.png">
+
+
+                            <label>
+                                <img width="18" src="~/Template/bordash.laborasyon.com/demos/default/assets/media/image/flags/262-united-kingdom.png" class="mr-2"
+                                     alt="flag"> @i.Text
+                                </label>
+                        </option>
+            }
+                    </select>*@
+        <ul name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" onchange="this.form.submit();">
+            <li class="nav-item" name="culture">
+                <a href="/Category/CultureManagemenet" name="culture" class="nav-link dropdown-toggle" data-toggle="dropdown" asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                    Select Language
+                </a>
+
+                <div class="dropdown-menu" name="culture">
+                    @foreach (var i in cultureItems)
+                    {
+                        <button type="submit" class="dropdown-item" name="culture" value="@i.Value" asp-for="@requestCulture.RequestCulture.UICulture.Name" onclick="this.form.submit();">
+                            <img width="18" src="~/Image/Flag/@ViewBag.image[cultureItems.IndexOf(i)].Image" class="mr-2" alt="flag">
+                            @ViewBag.image[cultureItems.IndexOf(i)].Language
+                        </button>
+                    }
+
+                </div>
+            </li>
+        </ul>
     </form>
+
+
 </div>

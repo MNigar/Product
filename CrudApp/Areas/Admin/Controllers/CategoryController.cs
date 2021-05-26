@@ -23,12 +23,14 @@ namespace CrudApp.Areas.Admin.Controllers
             _context = context;
             _environment = environment;
         }
-        public IActionResult CultureManagemenet(string culture, string returnUrl)
+        public IActionResult CultureManagemenet(string culture, string returnUrl, List<string> n)
         {
             Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
                 new CookieOptions { Expires = DateTimeOffset.Now.AddDays(30) });
-
+            n.Add("262-united-kingdom.png");
+            n.Add("013-tunisia.png");
+            ViewBag.im = n;
             return LocalRedirect(returnUrl);
         }
         public IActionResult Index()

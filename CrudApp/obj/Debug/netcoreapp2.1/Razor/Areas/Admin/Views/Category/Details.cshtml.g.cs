@@ -112,7 +112,7 @@ using CrudApp.Resource;
             WriteLiteral("\r\n                    </dt>\r\n                    <dd>\r\n                        ");
             EndContext();
             BeginContext(697, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "65d3dbc4050d4e6497287a662e6d50e9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "7af7b578b6574018a2c3dc6459c5297e", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -140,7 +140,7 @@ AddHtmlAttributeValue("", 715, Model.Image, 715, 12, false);
             WriteLiteral("\r\n                    </dd>\r\n                    <div>\r\n                        ");
             EndContext();
             BeginContext(845, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74a403f30852493cb19a50c6f7a8f479", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b2b703907c44db0b16001a9eb0ac194", async() => {
                 BeginContext(868, 31, false);
 #line 29 "D:\CrudApp\CrudApp\Areas\Admin\Views\Category\Details.cshtml"
                                          Write(stringLocalizer["Back to List"]);
