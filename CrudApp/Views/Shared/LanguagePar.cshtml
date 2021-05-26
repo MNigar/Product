@@ -43,10 +43,10 @@
                 <div class="dropdown-menu" name="culture">
                     @foreach (var i in cultureItems)
                     {
-                        <button type="submit" class="dropdown-item" name="culture" value="@i.Value" asp-for="@requestCulture.RequestCulture.UICulture.Name" onclick="this.form.submit();">
-                            <img width="18" src="~/Image/Flag/@ViewBag.image[cultureItems.IndexOf(i)].Image" class="mr-2" alt="flag">
-                            @ViewBag.image[cultureItems.IndexOf(i)].Language
-                        </button>
+                    <button type="submit" class="dropdown-item" name="culture" value="@i.Value" asp-for="@requestCulture.RequestCulture.UICulture.Name" onclick="this.form.submit();">
+                        <img width="18" src="~/Image/Flag/@ViewBag.image[cultureItems.IndexOf(i)].Image" class="mr-2" alt="flag">
+                        @stringLocalizer[@ViewBag.image[cultureItems.IndexOf(i)].Language]
+                    </button>
                     }
 
                 </div>

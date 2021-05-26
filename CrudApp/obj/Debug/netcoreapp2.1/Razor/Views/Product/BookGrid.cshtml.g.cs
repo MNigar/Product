@@ -73,7 +73,7 @@ using CrudApp.Resource;
             WriteLiteral("<html>\r\n");
             EndContext();
             BeginContext(112, 3806, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a0ec672071cc4c668f9ff71a33510cb6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2336b75390724c7b8db50663d6276cfe", async() => {
                 BeginContext(118, 62, true);
                 WriteLiteral("\r\n    <div class=\"metro_subheader dark-overlay dark-overlay-2\"");
                 EndContext();
@@ -101,7 +101,7 @@ WriteAttributeValue("", 282, ViewData["image"], 282, 18, false);
                 WriteLiteral("</h1>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- Subheader End -->\r\n    <!-- Blog Posts Start -->\r\n    ");
                 EndContext();
                 BeginContext(552, 3329, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "48ba60323c9c47fdb92f9f28c42968e2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8966c80568974da78f9cc8fb43f6e8cc", async() => {
                     BeginContext(558, 237, true);
                     WriteLiteral("\r\n        <div class=\"section\">\r\n\r\n            <div class=\"container\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-12\">\r\n\r\n\r\n                        <div class=\"col-md-4\">\r\n                            <div>");
                     EndContext();
@@ -126,7 +126,7 @@ WriteAttributeValue("", 282, ViewData["image"], 282, 18, false);
                     WriteLiteral("</div>\r\n                            <select class=\"form-control\" name=\"categoryId\">\r\n                                ");
                     EndContext();
                     BeginContext(1179, 82, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b4ada9045ee240f3abbc88662f1d5131", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d2773f59a2a45d88e57b1c31eec554c", async() => {
                         BeginContext(1222, 30, false);
 #line 34 "D:\MyProject\Product\CrudApp\Views\Product\BookGrid.cshtml"
                                                                      Write(stringLocalizer["Choose here"]);
@@ -171,7 +171,7 @@ WriteAttributeValue("", 282, ViewData["image"], 282, 18, false);
                     WriteLiteral("                                    ");
                     EndContext();
                     BeginContext(1408, 42, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "122f78b054fd482c99ed626745366ce6", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "405be53b7bdd4017bf389cc5e13b14e1", async() => {
                         BeginContext(1433, 8, false);
 #line 38 "D:\MyProject\Product\CrudApp\Views\Product\BookGrid.cshtml"
                                                        Write(cat.Name);
@@ -259,7 +259,7 @@ WriteAttributeValue("", 2580, i.Id, 2580, 5, false);
                     WriteLiteral(">\r\n\r\n                                        ");
                     EndContext();
                     BeginContext(2631, 82, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "5020a2f81e6a446a8202dabc9647cc51", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c8933c0454e542bab90645b0c8ba6b62", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

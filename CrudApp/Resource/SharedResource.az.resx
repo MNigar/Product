@@ -132,6 +132,9 @@
   <data name="Author" xml:space="preserve">
     <value>Müəllif</value>
   </data>
+  <data name="Azerbaijan" xml:space="preserve">
+    <value>Azərbaycan </value>
+  </data>
   <data name="Back to List" xml:space="preserve">
     <value>Siyahıya keçid edin</value>
   </data>
@@ -186,6 +189,9 @@
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>İngilis</value>
+  </data>
   <data name="Genre" xml:space="preserve">
     <value>Janr</value>
   </data>
@@ -236,9 +242,6 @@
   </data>
   <data name="Select Language" xml:space="preserve">
     <value>Dil seçin</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
   </data>
   <data name="SubHeader" xml:space="preserve">
     <value>Başlıq</value>
