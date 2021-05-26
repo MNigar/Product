@@ -135,6 +135,12 @@
   <data name="Back to List" xml:space="preserve">
     <value>Siyahıya keçid edin</value>
   </data>
+  <data name="Book" xml:space="preserve">
+    <value>Kitab</value>
+  </data>
+  <data name="Book Genres" xml:space="preserve">
+    <value>Janrlar</value>
+  </data>
   <data name="Book Janrs" xml:space="preserve">
     <value> Janrlar</value>
   </data>
@@ -149,6 +155,9 @@
   </data>
   <data name="Category" xml:space="preserve">
     <value>Janr</value>
+  </data>
+  <data name="Choose here" xml:space="preserve">
+    <value>Seçin</value>
   </data>
   <data name="Count" xml:space="preserve">
     <value>Say</value>
@@ -201,6 +210,9 @@
   <data name="Name" xml:space="preserve">
     <value>Ad</value>
   </data>
+  <data name="Page Count" xml:space="preserve">
+    <value>Səhifə sayı</value>
+  </data>
   <data name="PageCount" xml:space="preserve">
     <value>Səhifə sayı</value>
   </data>
@@ -221,6 +233,12 @@
   </data>
   <data name="Recent Posts" xml:space="preserve">
     <value>Son postlar</value>
+  </data>
+  <data name="Select Language" xml:space="preserve">
+    <value>Dil seçin</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
   </data>
   <data name="SubHeader" xml:space="preserve">
     <value>Başlıq</value>

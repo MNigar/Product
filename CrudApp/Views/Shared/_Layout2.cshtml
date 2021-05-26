@@ -31,64 +31,16 @@
 
 <body>
 
-    <!-- Aside (Right Panel) -->
-    <aside class="metro_aside metro_aside-right">
-        <div class="sidebar">
-
-            <!-- Sidebar CTA Start -->
-            
-            <!-- Popular Tags End -->
-
-        </div>
-    </aside>
-    <div class="metro_aside-overlay aside-trigger-right"></div>
-
-    <!-- Aside (Mobile Navigation) -->
+   
     <aside class="metro_aside metro_aside-left">
 
         @*@Html.Partial("~/Views/Partial/Logo.cshtml")*@
         <ul>
             <li class="menu-item menu-item-has-children">
                 <a href="/Product/HomePage/">Home Pages</a>
-                @*<ul class="sub-menu">
-                        <li class="menu-item"> <a href="index.html">Home v1</a> </li>
-                        <li class="menu-item"> <a href="home-v2.html">Home v2</a> </li>
-                    </ul>*@
+               
             </li>
-            @*<li class="menu-item menu-item-has-children">
-                    <a href="#">Blog</a>
-                    <ul class="sub-menu">
-                        <li class="menu-item"> <a href="blog-grid.html">Blog Archive</a> </li>
-                        <li class="menu-item"> <a href="blog-details.html">Blog Details</a> </li>
-                    </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                    <a href="#">Shop</a>
-                    <ul class="sub-menu">
-                        <li class="menu-item"> <a href="shop.html">Shop Catalog</a> </li>
-                        <li class="menu-item"> <a href="cart.html">Cart</a> </li>
-                        <li class="menu-item"> <a href="checkout.html">Checkout</a> </li>
-                        <li class="menu-item"> <a href="product-details.html">Product Details</a> </li>
-                    </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                    <a href="#">Recipe</a>
-                    <ul class="sub-menu">
-                        <li class="menu-item"> <a href="/Menu/RecipeGrid">Recipe Archive</a></li>
-                        <li class="menu-item"> <a href="/Menu/RecipeDetails">Recipe Details</a></li>
-                        <li class="menu-item"> <a href="/Category/RecaipCategory">Recipe Categories</a></li>
-                        <li class="menu-item"> <a href="recipe-authors.html">Recipe Authors</a></li>
-                        <li class="menu-item"> <a href="/Recipes/Creates">Submit Recipe</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item menu-item-has-children">
-                    <a href="#">Pages</a>
-                    <ul class="sub-menu">
-                        <li class="menu-item"> <a href="contact-us.html">Contact Us</a> </li>
-
-                        <li class="menu-item"> <a href="team.html">Team</a> </li>
-                    </ul>
-                </li>*@
+           
         </ul>
 
     </aside>
@@ -227,11 +179,15 @@
                     <div class="offset-lg-2 col-lg-3 col-md-12 col-sm-12 footer-widget">
                         <h5 class="widget-title">@stringLocalizer["Quick Links"]</h5>
                         <ul>
-                            <li> <a href="blog-grid.html">Latest New</a> </li>
-                            <li> <a href="recipe-grid.html">Recipes</a> </li>
-                            <li> <a href="shop.html">Our Products</a> </li>
-                            <li> <a href="recipe-authors.html">Our Authors</a> </li>
-                            <li> <a href="recipe-details-2.html">Recipe Details</a> </li>
+
+                         
+                            <li>
+                                <a href="/Product/BookGrid">@stringLocalizer["All  Books"]</a>
+                            </li> 
+                            <li>
+                                <a href="/Category/CategoryGrid">@stringLocalizer["Book Genres"]</a>
+
+                            </li>
                         </ul>
                     </div>
 

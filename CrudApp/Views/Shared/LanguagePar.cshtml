@@ -37,7 +37,7 @@
         <ul name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" onchange="this.form.submit();">
             <li class="nav-item" name="culture">
                 <a href="/Category/CultureManagemenet" name="culture" class="nav-link dropdown-toggle" data-toggle="dropdown" asp-for="@requestCulture.RequestCulture.UICulture.Name">
-                    Select Language
+                   @stringLocalizer["Select Language"]
                 </a>
 
                 <div class="dropdown-menu" name="culture">
