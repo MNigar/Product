@@ -12,6 +12,7 @@ namespace CrudApp.Utils
         public static string smtpServer = "smtp.gmail.com";
         public static string smtpUserName = "tricklyrecipeapp@gmail.com";
         public static string smtpUserPass = "bilmirem@";
+
         public static void SendEmail(string userEmail, string username, string Text, string Name)
         {
             using (SmtpClient smtpSend = new SmtpClient())

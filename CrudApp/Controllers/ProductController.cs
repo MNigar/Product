@@ -112,11 +112,9 @@ namespace CrudApp.Controllers
             {
                 if (image != null)
                 {
-                    string fileName = $"_{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
-                    string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
-                    FileStream fileStream = new FileStream(path, FileMode.CreateNew);
-                    await image.CopyToAsync(fileStream);
-                    model.Image = fileName;
+                    var fileStream = method.Image(image,_environment);
+                    await image.CopyToAsync(fileStream.Item2);
+                    model.Image = fileStream.Item1;
 
                     Utils.Email.SendEmail(HttpContext.Session.GetString("Email"), HttpContext.Session.GetString("Name"), "Kitab admin terefinden qiymetlendirirlecek", model.Name);
                     _context.Entry(currentProduct).State = EntityState.Detached;

@@ -90,7 +90,7 @@ Write(stringLocalizer["SubHeader"]);
             WriteLiteral("            ");
             EndContext();
             BeginContext(350, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a54148cd41fa4eaa9549942bf183a0d9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c7c9141658b45568dac03b57842080f", async() => {
                 BeginContext(374, 25, false);
 #line 22 "D:\MyProject\Product\CrudApp\Areas\Admin\Views\Home\SubHeaders.cshtml"
                               Write(stringLocalizer["Create"]);
@@ -174,7 +174,7 @@ Write(stringLocalizer["SubHeader"]);
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(969, 150, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6e19c827bd00472a9ee26fa2f7eecc86", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ed643890c0c24a529fabece36bd2b5bd", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -200,7 +200,7 @@ AddHtmlAttributeValue("", 1052, item.Image, 1052, 11, false);
             WriteLiteral("\r\n\r\n                        \r\n                    </td>\r\n\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1228, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0426c144691d4a7dafa37e432bda7014", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3630719a33b04ff093e8c68eddc30d11", async() => {
                 BeginContext(1277, 4, true);
                 WriteLiteral("Edit");
                 EndContext();

@@ -1,8 +1,10 @@
 ﻿using CrudApp.Db.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +12,7 @@ namespace CrudApp.Utils
 {
     public class BookDataController : Controller
     {
+     
         public string RecipeDate(DateTime date1, DateTime date2)
         {
             var date = date1 - date2;
@@ -66,6 +69,17 @@ namespace CrudApp.Utils
             newProduct.Description = model.Description;
             newProduct.CreatedDate = DateTime.Now;
             return newProduct;
+
+        }
+
+
+       
+        public Tuple<string,FileStream> Image(IFormFile image, IHostingEnvironment _environment)
+        {
+            string fileName = $"_{DateTime.Now.ToString("yyyyMMddHHmmss")}_{image.FileName}";
+            string path = Path.Combine(_environment.WebRootPath, "Image", fileName);
+            FileStream fileStream = new FileStream(path, FileMode.CreateNew);
+            return Tuple.Create(fileName,fileStream);
 
         }
     }
