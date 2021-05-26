@@ -20,17 +20,17 @@
     <div class="col-2"> </div>
     <div class="col-2">
         <div class="row">
-            Active: <div style="width:20px;height:20px;border:1px solid black; background-color :antiquewhite"></div>
+            @stringLocalizer["Active"]: <div style="width:20px;height:20px;border:1px solid black; background-color :antiquewhite"></div>
         </div>
     </div>
     <div class="col-2">
         <div class="row">
-            Deactive: <div style="width:20px;height:20px;border:1px solid black; background-color :#948d8d"></div>
+            @stringLocalizer["Deactive"]  : <div style="width:20px;height:20px;border:1px solid black; background-color :#948d8d"></div>
         </div>
     </div>
     <div class="col-2">
         <div class="row">
-            New: <div style="        width: 20px;
+            @stringLocalizer["New"]   : <div style="        width: 20px;
         height: 20px;
         border: 1px solid black;
         background-color: #ffd800">
@@ -40,7 +40,7 @@
     </div>
     <div class="col-2">
         <div class="row">
-            Updated: <div style="width:20px;height:20px;border:1px solid black; background-color : aqua"></div>
+            @stringLocalizer["Updated"]  : <div style="width:20px;height:20px;border:1px solid black; background-color : aqua"></div>
         </div>
     </div>
     <br />
@@ -52,7 +52,7 @@
                 <label>No</label>
             </th>
             <th>
-                @stringLocalizer["name"]
+                @stringLocalizer["Name"]
             </th>
             <th>
                 @stringLocalizer["Author"]
@@ -118,8 +118,8 @@
 
 
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
-                  
+                        <a asp-action="Details" asp-route-id="@item.Id"> @stringLocalizer["Details"]</a>
+
                     </td>
                 </tr>
             }
@@ -156,7 +156,7 @@
 
 
         <td>
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+            <a asp-action="Details" asp-route-id="@item.Id"> @stringLocalizer["Details"]</a>
         </td>
     </tr>
 
@@ -193,7 +193,7 @@
 
 
         <td>
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+            <a asp-action="Details" asp-route-id="@item.Id"> @stringLocalizer["Details"]</a> 
         </td>
     </tr>
             }
@@ -230,7 +230,7 @@
 
 
         <td>
-            <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+            <a asp-action="Details" asp-route-id="@item.Id"> @stringLocalizer["Details"]</a>
         </td>
     </tr>
             }

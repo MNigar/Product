@@ -81,7 +81,7 @@ Write(stringLocalizer["Genres"]);
             WriteLiteral("</h2>\r\n<style>\r\n    td {\r\n        text-align: center;\r\n    }\r\n\r\n    th {\r\n        text-align: center;\r\n    }\r\n</style>\r\n<div class=\"container\">\r\n    <hr />\r\n    <p>\r\n\r\n        ");
             EndContext();
             BeginContext(299, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b107b32047247f6b36445b660da96de", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fddaf905c8a415995db8c874d8e7294", async() => {
                 BeginContext(323, 25, false);
 #line 21 "D:\MyProject\Product\CrudApp\Areas\Admin\Views\Category\Index.cshtml"
                           Write(stringLocalizer["Create"]);
@@ -155,7 +155,7 @@ Write(stringLocalizer["Genres"]);
             WriteLiteral("\r\n                </td>\r\n               \r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(951, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a86343fa9c2f4dd1b68490e917317d0a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5144e9b9a6244a2ca7e870a8d206e219", async() => {
                 BeginContext(996, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -190,7 +190,7 @@ Write(stringLocalizer["Genres"]);
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(1028, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37468a92054d400d94ffcdea1a70c45b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a8a0306dec64a42871aa6fbcba9d8ee", async() => {
                 BeginContext(1076, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -225,7 +225,7 @@ Write(stringLocalizer["Genres"]);
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(1111, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c944ab5ae2704e8aabfa78b2d260ea0f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07f90384db1c464996fe6b557d2b21ee", async() => {
                 BeginContext(1158, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

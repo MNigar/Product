@@ -152,7 +152,7 @@ Write(stringLocalizer["Books"]);
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(1066, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0404940b5ba0458e9d454e6c77fe7874", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aa2b8e60b1a644fc8cf5ae43cd7f4f44", async() => {
                 BeginContext(1112, 23, false);
 #line 47 "D:\MyProject\Product\CrudApp\Views\Product\Index.cshtml"
                                                         Write(stringLocalizer["Edit"]);
@@ -191,7 +191,7 @@ Write(stringLocalizer["Books"]);
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(1159, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f42d6791042e40ab96cc5f7be6ba2f12", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "86424ba565804a4aa0b89594e4852308", async() => {
                 BeginContext(1211, 7, true);
                 WriteLiteral("Details");
                 EndContext();

@@ -61,7 +61,7 @@ namespace CrudApp.Areas.Admin.Controllers
             _context.Entry(model).State = EntityState.Modified;
 
              _context.SaveChanges();
-            Utils.Email.SendEmail(model.User.Email, model.User.Name, res.message, model.Name);
+            Utils.Email.SendEmail(model.User.Email, model.User.Name, res.message+"admin tərəfindən rədd edildi", model.Name);
 
             return new JsonResult(new { message = "OK" });
 
